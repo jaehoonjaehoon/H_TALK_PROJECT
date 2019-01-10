@@ -1,0 +1,794 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EpLibrary.cs.Pair&lt;T, U&gt;" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Containers\Pair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.PriorityQueue&lt;T&gt;" Collapsed="true">
+    <Position X="21.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAEAAAAAIAAAAQAAAAABAAAAAAAAABQAAA=</HashCode>
+      <FileName>Containers\PriorityQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.ThreadSafeErasableQueue&lt;DataType&gt;" Collapsed="true">
+    <Position X="26.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBAEAAAAAAAIAAAAAQACAQACAAABAAAAAAAAABACAA=</HashCode>
+      <FileName>Containers\ThreadSafeQueues\ThreadSafeErasableQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.ThreadSafePQueue&lt;DataType&gt;" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBAEAAAAAAEIAAAAAQAAAQACAAABAAAAAAAAABQCAA=</HashCode>
+      <FileName>Containers\ThreadSafeQueues\ThreadSafePQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.ThreadSafeQueue&lt;DataType&gt;" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBAEAAAAAAEIAAAAAQAAAQAAAAABAAAAAAAAABQCAA=</HashCode>
+      <FileName>Containers\ThreadSafeQueues\ThreadSafeQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.Triple&lt;T, U, V&gt;" Collapsed="true">
+    <Position X="16.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAgEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Containers\Triple.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.CRC32" Collapsed="true">
+    <Position X="26.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkAAAAAQAAAAhAIAgAAFAAAAiAAAgAoAIgABAEBAAAA=</HashCode>
+      <FileName>DotNetZip\CRC32.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.CrcCalculatorStream" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAARAACAAQAAgGAAAAABgAAAAAAADCIABAAGIACg=</HashCode>
+      <FileName>DotNetZip\CRC32.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EpLibrary.cs.DeflateManager" Collapsed="true">
+    <Position X="19.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>VAb6FB4VwqSSzSBZ5gUIZxQAoYQIwbdoASTCdJkgACM=</HashCode>
+      <FileName>DotNetZip\Deflate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.DeflateStream" Collapsed="true">
+    <Position X="21.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAQBAACAEYAAwGAAAAABgIQACAAABAAAAABEIACA=</HashCode>
+      <FileName>DotNetZip\DeflateStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.GZipStream" Collapsed="true">
+    <Position X="19.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAQQEECAEYAAwGAAIAQBiIQAiAAQBAEAQAAFIBCA=</HashCode>
+      <FileName>DotNetZip\GZipStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.InflateBlocks" Collapsed="true">
+    <Position X="21.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACQAAKBxDIAwEgBABAAAAIAAANAAAQAAApAgI=</HashCode>
+      <FileName>DotNetZip\Inflate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.InternalInflateConstants" Collapsed="true">
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DotNetZip\Inflate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.InflateCodes" Collapsed="true">
+    <Position X="23.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBDEQAAAAAgAgKAggCAAADAhBAAAACAgEECAAgAAkg=</HashCode>
+      <FileName>DotNetZip\Inflate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.InflateManager" Collapsed="true">
+    <Position X="25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAAAAAQAAABSCBAAKAABAAAAAAAAAEAAAAQAAgxAI=</HashCode>
+      <FileName>DotNetZip\Inflate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.InfTree" Collapsed="true">
+    <Position X="26.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAEIAAEAAAIACKAAAABgAERAAJAACEEBdRAABBABA=</HashCode>
+      <FileName>DotNetZip\InfTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.WorkItem" Collapsed="true">
+    <Position X="23.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAABAIAAQAAAABAiAABAAA=</HashCode>
+      <FileName>DotNetZip\ParallelDeflateOutputStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.ParallelDeflateOutputStream" Collapsed="true">
+    <Position X="16.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAEQQQBKgCVAQwGIIAAABhAAKQAgAIAIANIZGIVCg=</HashCode>
+      <FileName>DotNetZip\ParallelDeflateOutputStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.Tree" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACABAAAKCAAQAAAIAAAAABAAAAgAAAJkAAAAAAFgAAE=</HashCode>
+      <FileName>DotNetZip\Tree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.ZlibException" Collapsed="true">
+    <Position X="14.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DotNetZip\Zlib.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.SharedUtils" Collapsed="true">
+    <Position X="18" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQICAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DotNetZip\Zlib.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.InternalConstants" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAQAAAAAAAAAAAAICAAAAAAAIAAgAQAAAhIAA=</HashCode>
+      <FileName>DotNetZip\Zlib.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.StaticTree" Collapsed="true">
+    <Position X="23.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAABAAAAAgAAABBAAAiAaAAAAAA=</HashCode>
+      <FileName>DotNetZip\Zlib.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.Adler" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAgAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>DotNetZip\Zlib.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.ZlibBaseStream" Collapsed="true">
+    <Position X="25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAQCgAABUABhGAAIAQBkIQOAUAABAAAICRHIJDg=</HashCode>
+      <FileName>DotNetZip\ZlibBaseStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.ZlibCodec" Collapsed="true">
+    <Position X="26.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQEIwAgQQKAAEEAAQCIAAAAAABASAgAiABBAIBBAAAI=</HashCode>
+      <FileName>DotNetZip\ZlibCodec.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.ZlibConstants" Collapsed="true">
+    <Position X="12.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAAAAACAAAABgAAEACEEAAAAAQAAAAAAAA=</HashCode>
+      <FileName>DotNetZip\ZlibConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.ZlibStream" Collapsed="true">
+    <Position X="16.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAQAAACAEYAAwGAAAAABgIQACAAABAAAAAAEIACA=</HashCode>
+      <FileName>DotNetZip\ZlibStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.CmdLineOptions" Collapsed="true">
+    <Position X="23.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAABAAAAAAAAAAAAAAAAAAgAAAAAAAIAAAAAAAAI=</HashCode>
+      <FileName>Framework\CmdLineOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.GZip" Collapsed="true">
+    <Position X="18" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Compression\GZip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.AesCrypt" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Crypt\AesCrypt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.Crypt" Collapsed="true">
+    <Position X="16.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Crypt\Crypt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.RijndaelCrypt" Collapsed="true">
+    <Position X="26.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Crypt\RijndaelCrypt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.BaseTextFile" Collapsed="true">
+    <Position X="2.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgABAAABAAQCAAAAIIAAAAAAAAAAAQBAAAEAI=</HashCode>
+      <FileName>Framework\FileSystem\BaseTextFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.BinaryFile" Collapsed="true">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgABAAABAAAAIAIAAIAAAEAAAAAAAAAAAAUAA=</HashCode>
+      <FileName>Framework\FileSystem\BinaryFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.FolderHelper" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACFACCAACAAAAAAAAAAAMAQAAAAAAAAAQAAABAAEE=</HashCode>
+      <FileName>Framework\FileSystem\FolderHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.OpenFileDialogEx" Collapsed="true">
+    <Position X="25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAgAAAAAIAQAEAQAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Framework\FileSystem\FolderHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.OpenMultiFileDialog" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAQAEAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\FileSystem\FolderHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.OpenFolderDialog" Collapsed="true">
+    <Position X="26.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAIAAAEAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Framework\FileSystem\FolderHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.SaveFileDialogEx" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAAAAAAgAAAAAIAAAEAQAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Framework\FileSystem\FolderHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.LogWriter" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAQEAAAAAAAAgAAAAAAAAQAAAAACA=</HashCode>
+      <FileName>Framework\FileSystem\LogWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.PropertiesFile" Collapsed="true">
+    <Position X="2.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAEASAAAAAAAAAEAAAAYQAAQAABAAAA=</HashCode>
+      <FileName>Framework\FileSystem\PropertiesFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.TextFile" Collapsed="true">
+    <Position X="5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAIQIAAAAAAAAAAAAAAAAAQAABAAAA=</HashCode>
+      <FileName>Framework\FileSystem\TextFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.IpcClient" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQCAAAQAQBBAABAACAEAYAAAAAAAIAAAAAABAEAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EpLibrary.cs.IpcClientOps" Collapsed="true">
+    <Position X="16.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAACABABAAAAIAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Framework\IPC\IpcClientInterface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.PipeWriteElem" Collapsed="true">
+    <Position X="18" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABIAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcConf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.IpcConf" Collapsed="true">
+    <Position X="18" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAKAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcConf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.IpcPipeOps" Collapsed="true">
+    <Position X="21.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAIAACAAABAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcPipe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.IpcPipe" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FAAAAAAAAUBBAAACACAEAAAAgAAIAMAAAAAABAEAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcPipe.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EpLibrary.cs.IpcServer" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACEAIAAABAAAAgAADEAAAAQAAAAIBAAgAARAAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcServer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EpLibrary.cs.IpcServerOps" Collapsed="true">
+    <Position X="23.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAIAACAAABAAAAIAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcServerInterfaces.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.BaseLock" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQAAAAAAAAAAAAAAAABAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Framework\Lock\BaseLock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.EventEx" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAQAAAAAAAAAAAAIAAADAAAAkAACBAAAEAAAAAAAAI=</HashCode>
+      <FileName>Framework\Lock\EventEx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.InterlockedEx" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQAAAAAAAAAAAAAAAABAAAAAAAAAAAAEAAABAAAAA=</HashCode>
+      <FileName>Framework\Lock\InterlockedEx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.MutexEx" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAQAAAAAAIAAAAAAAAABAAAAAAAAAAAAEAAAAAIACQ=</HashCode>
+      <FileName>Framework\Lock\MutexEx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.NoLock" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQAAAAAAAAAAAAAAAABAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Framework\Lock\NoLock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.SingletonHolder&lt;T&gt;" Collapsed="true">
+    <Position X="21.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAIQAAAAAAAAAA=</HashCode>
+      <FileName>Framework\SingletonHolder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.BaseJob" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgBAAAQACAAAAAAEAgAAAAAAAAAABAAACAA=</HashCode>
+      <FileName>Framework\ThreadSystem\JobSystem\BaseJob.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EpLibrary.cs.BaseJobProcessor" Collapsed="true">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAgAAAAAAAAAAAAAEAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\ThreadSystem\JobSystem\BaseJobProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.JobScheduleQueue" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAABAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\ThreadSystem\ScheduleSystem\JobScheduleQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.ThreadEx" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQwgCAAmJAAAoAASAEAGCEEBAAACEAAAAUBAgAAEE=</HashCode>
+      <FileName>Framework\ThreadSystem\ThreadEx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.WorkerThreadInfinite" Collapsed="true">
+    <Position X="5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAQAAAAAQA=</HashCode>
+      <FileName>Framework\ThreadSystem\WorkerThreadSystem\AddOn\WorkerThreadInfinite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.WorkerThreadSingle" Collapsed="true">
+    <Position X="7.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\ThreadSystem\WorkerThreadSystem\AddOn\WorkerThreadSingle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.BaseWorkerThread" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAEEAAACEAAAQAIAIAEAAAACACAAIAAACAUAAAACAE=</HashCode>
+      <FileName>Framework\ThreadSystem\WorkerThreadSystem\BaseWorkerThread.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.WorkerThreadFactory" Collapsed="true">
+    <Position X="21.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\ThreadSystem\WorkerThreadSystem\WorkerThreadFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.WebRequestEx" Collapsed="true">
+    <Position X="19.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAEAAAAAAAAQAAAAgA=</HashCode>
+      <FileName>Framework\WebRequestEx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.TaskbarNotifier" Collapsed="true">
+    <Position X="25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQREEykMWAUBAhpgkJZAQMEAABREWAJAqEBAZElKAsA=</HashCode>
+      <FileName>GUI\TaskbarNotifier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.PrimeNum" Collapsed="true">
+    <Position X="19.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Math\PrimeNum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.RandomEx" Collapsed="true">
+    <Position X="23.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Math\RandomEx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.GetSet" Collapsed="true">
+    <Position X="8.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAJABAAAAAAAQAAAAAAAAAAAAAAEgAAAA=</HashCode>
+      <FileName>SilverlightSerialization\GetSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.GetSetGeneric&lt;T, TR&gt;" Collapsed="true">
+    <Position X="8.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQBABAAAAAAAiAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>SilverlightSerialization\GetSetGeneric.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.GetWritableAttributes" Collapsed="true">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAgAAAAAAACAAAAAAAAAAAAAAAAAAIAQgAAAA=</HashCode>
+      <FileName>SilverlightSerialization\GetWritableAttributes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.Entry" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAABABAAAAAAAAACQEAAAAAAAAAAAgCAAAAEA=</HashCode>
+      <FileName>SilverlightSerialization\SerializationUnits.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.BinarySerializer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MckTICFAAaQFSBSwgWgBQaIaAaOg0BAwAS3kACIQCMA=</HashCode>
+      <FileName>SilverlightSerialization\SerializationUnits.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EpLibrary.cs.DoNotSerialize" Collapsed="true">
+    <Position X="25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SilverlightSerialization\SilverlightSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.DoNotChecksum" Collapsed="true">
+    <Position X="23.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SilverlightSerialization\SilverlightSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.SerializerId" Collapsed="true">
+    <Position X="16.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SilverlightSerialization\SilverlightSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.CreateUsingEvent" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SilverlightSerialization\SilverlightSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.SerializerAttribute" Collapsed="true">
+    <Position X="14.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SilverlightSerialization\SilverlightSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.SilverlightSerializer" Collapsed="true">
+    <Position X="19.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AC4AXKzJ6MBWJVKhFcEUlpQiSjFsdoaQkAoxMQpQDCo=</HashCode>
+      <FileName>SilverlightSerialization\SilverlightSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.ConsoleHelper" Collapsed="true">
+    <Position X="25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>System\ConsoleHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.DateTimeHelper" Collapsed="true">
+    <Position X="18" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAIAAAAAgAAAEQAABAAEAgAAAgAAAAAQAAgAAAA=</HashCode>
+      <FileName>System\DateTimeHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.Endian" Collapsed="true">
+    <Position X="26.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgCAAAgAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>System\Endian.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.RegistryHelper" Collapsed="true">
+    <Position X="25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAGACAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>System\RegistryHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpLibrary.cs.Util" Collapsed="true">
+    <Position X="18" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>System\Util.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="EpLibrary.cs.IpcClientInterface" Collapsed="true">
+    <Position X="14.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAABAAAAEAIAAAAAAAAAAAAAABAEAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcClientInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EpLibrary.cs.IpcClientCallbackInterface" Collapsed="true">
+    <Position X="12.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIAAAAAAAAAAAAEAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcClientInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EpLibrary.cs.IpcPipeCallbackInterface" Collapsed="true">
+    <Position X="18" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIAAAAAAAAAAAAEAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcPipe.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EpLibrary.cs.IpcServerInterface" Collapsed="true">
+    <Position X="21.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAABAAAAgAADEAAAAQAAAAAAAAgAABAAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcServerInterfaces.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EpLibrary.cs.IpcInterface" Collapsed="true">
+    <Position X="16.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAACAAAAAAAAgAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcServerInterfaces.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EpLibrary.cs.IpcServerCallbackInterface" Collapsed="true">
+    <Position X="19.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIAAAAAAAAAAAAEAAAAAAAACABAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcServerInterfaces.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EpLibrary.cs.IStorage" Collapsed="true">
+    <Position X="25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>McgTICFAAaQFSBSwgWgBQaIaAYOg0AAwAS3kACIACEA=</HashCode>
+      <FileName>SilverlightSerialization\IStorage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EpLibrary.cs.ISerializeObject" Collapsed="true">
+    <Position X="23.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SilverlightSerialization\SilverlightSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="EpLibrary.cs.BlockState" Collapsed="true">
+    <Position X="12.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACIAAAAAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>DotNetZip\Deflate.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.DeflateFlavor" Collapsed="true">
+    <Position X="23.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAQAABAA=</HashCode>
+      <FileName>DotNetZip\Deflate.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.FlushType" Collapsed="true">
+    <Position X="26.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAgAEAAEAAAg=</HashCode>
+      <FileName>DotNetZip\Zlib.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.CompressionLevel" Collapsed="true">
+    <Position X="14.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAQAAABAAAAAAkAAAA=</HashCode>
+      <FileName>DotNetZip\Zlib.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.CompressionStrategy" Collapsed="true">
+    <Position X="18" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DotNetZip\Zlib.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.CompressionMode" Collapsed="true">
+    <Position X="16.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DotNetZip\Zlib.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.ZlibStreamFlavor" Collapsed="true">
+    <Position X="12.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>DotNetZip\ZlibBaseStream.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.CryptType" Collapsed="true">
+    <Position X="21.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Crypt\Crypt.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.CryptAlgo" Collapsed="true">
+    <Position X="19.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Crypt\Crypt.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.IpcStartStatus" Collapsed="true">
+    <Position X="14.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcConf.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.IpcConnectStatus" Collapsed="true">
+    <Position X="12.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgACAAAEAAAABAAAAAAAAAAAABAAAAAAAABAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcConf.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.IpcWriteStatus" Collapsed="true">
+    <Position X="16.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Framework\IPC\IpcConf.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.JobStatus" Collapsed="true">
+    <Position X="19.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAgAAACQAAAAABQAIAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\ThreadSystem\JobSystem\BaseJob.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.JobProcessorStatus" Collapsed="true">
+    <Position X="18" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAACQAAAAABQAIAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Framework\ThreadSystem\JobSystem\BaseJobProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.ThreadOpCode" Collapsed="true">
+    <Position X="25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\ThreadSystem\ThreadEx.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.ThreadStatus" Collapsed="true">
+    <Position X="26.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQACAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Framework\ThreadSystem\ThreadEx.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.TerminateResult" Collapsed="true">
+    <Position X="21.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAwAAA=</HashCode>
+      <FileName>Framework\ThreadSystem\ThreadEx.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.ThreadLifePolicy" Collapsed="true">
+    <Position X="23.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Framework\ThreadSystem\WorkerThreadSystem\BaseWorkerThread.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EpLibrary.cs.DownloadFileStatus" Collapsed="true">
+    <Position X="25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Framework\WebRequestEx.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

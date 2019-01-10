@@ -44,31 +44,31 @@ using System.IO;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// A class for Base File.
-    /// </summary>
+    
     public abstract class BaseTextFile
     {
-        /// <summary>
+        
         /// reader stream
-        /// </summary>
+        
         protected StreamReader m_reader=null;
-        /// <summary>
+        
         ///  writer stream
-        /// </summary>
+        
         protected StreamWriter m_writer = null;
-        /// <summary>
+        
         /// Encoding
-        /// </summary>
+        
         protected Encoding m_encoding = Encoding.Unicode;
-        /// <summary>
+        
         /// lock
-        /// </summary>
+        
         protected Object m_baseTextLock = new Object();
 
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
         /// <param name="encoding">the encoding type for this file</param>
 		public BaseTextFile(Encoding encoding=null)
         {
@@ -78,9 +78,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Default Copy Constructor
-        /// </summary>
+        
         /// <param name="b">the second object</param>
         public BaseTextFile(BaseTextFile b)
         {
@@ -92,9 +92,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Get current encoding
-        /// </summary>
+        
         /// <returns>current encoding</returns>
         public Encoding GetEncoding()
         {
@@ -103,9 +103,9 @@ namespace EpLibrary.cs
 	            return m_encoding;
             }
         }
-        /// <summary>
+        
         /// Set encoding as given encoding
-        /// </summary>
+        
         /// <param name="encoding">encoding to set</param>
         public void SetEncoding(Encoding encoding)
         {
@@ -115,9 +115,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Save the text to the given file
-        /// </summary>
+        
         /// <param name="filename">the name of the file to save</param>
         /// <returns>true if successfully saved, otherwise false</returns>
         public bool SaveToFile(String filename)
@@ -143,9 +143,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Append the text from the given file
-        /// </summary>
+        
         /// <param name="filename">the name of the file to append</param>
         /// <returns>true if successfully saved, otherwise false</returns>
         public bool AppendToFile(String filename)
@@ -170,9 +170,9 @@ namespace EpLibrary.cs
 
         }
 		
-        /// <summary>
+        
         /// Load the list of the properties from the given file
-        /// </summary>
+        
         /// <param name="filename">the name of the file to load</param>
         /// <returns>true if successfully loaded, otherwise false</returns>
         public bool LoadFromFile(String filename)
@@ -194,9 +194,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Write the given string to the file
-        /// </summary>
+        
         /// <param name="toFileString">the string to write to the file</param>
         protected void writeToFile(String toFileString)
         {
@@ -218,15 +218,15 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Loop Function that writes to the file.
-        /// </summary>
+        
         /// <remarks>Sub classes should implement this function</remarks>
 		protected abstract void writeLoop();
 
-        /// <summary>
+        
         /// Actual load Function that loads values from the file.
-        /// </summary>
+        
         /// <param name="stream">stream from the file</param>
         /// <remarks>Sub classes should implement this function</remarks>
 		protected abstract void loadFromFile(StreamReader stream);

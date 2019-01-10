@@ -5,38 +5,38 @@ namespace EpLibrary.cs
 {
     public interface IStorage
     {
-        /// <summary>
+        
         /// Starts the serialization process, the serializer should initialize and wait for data
-        /// </summary>
+        
         void StartSerializing();
-        /// <summary>
+        
         /// Called when serialization is complete, should return the data or a key
         /// encoded as a byte array that will be used to reinitialize the serializer
         /// later
-        /// </summary>
+        
         /// <returns></returns>
         void FinishedSerializing();
-        /// <summary>
+        
         /// Called when deserialization is complete, so that resources may be released
-        /// </summary>
+        
         void FinishedDeserializing();
-        /// <summary>
+        
         /// Called when serializing a new object, the Entry parameter may have MustHaveName set
         /// when this is true the name must be persisted as is so that the property or field can
         /// be set when retrieving the data.
         /// If this routine returns TRUE then no further processing is executed and the object
         /// is presumed persisted in its entirety
-        /// </summary>
+        
         /// <returns>Normally FALSE.  True if the object is already fully persisted</returns>
         /// <param name="entry">The item being serialized</param>
         bool StartSerializing(Entry entry, int id);
-        /// <summary>
+        
         /// Called when the last information about an object has been written
-        /// </summary>
+        
         /// <param name="entry">The object being written</param>
         void FinishSerializing(Entry entry);
 
-        /// <summary>
+        
         /// Called when deserializing an object.  If the Entry parameter has MustHaveName set then
         /// the routine should return with the Entry parameter updated with the name and
         /// the type of the object in StoredType
@@ -44,27 +44,27 @@ namespace EpLibrary.cs
         /// the fully constructed object, and no further processing will occur.  Not this does mean
         /// that it must handle its own references for previously seen objects
         /// This will be called after DeserializeGetName
-        /// </summary>
+        
         /// <returns>Normally NULL, it may also return a fully depersisted object</returns>
         /// <param name="entry"></param>
         object StartDeserializing(Entry entry);
 
-        /// <summary>
+        
         /// Called to allow the storage to retrieve the name of the item being deserialized
         /// All entries must be named before a call to StartDeserializing, this enables
         /// the system to fill out the property setter and capture default stored type
         /// information before deserialization commences
-        /// </summary>
+        
         /// <param name="entry">The entry whose name should be filled in</param>
         void DeserializeGetName(Entry entry);
-        /// <summary>
+        
         /// Called when an object has deserialization complete
-        /// </summary>
+        
         /// <param name="entry"></param>
         void FinishDeserializing(Entry entry);
-        /// <summary>
+        
         /// Reads a simple type (or array of bytes) from storage
-        /// </summary>
+        
         /// <param name="name">The name of the item</param>
         /// <param name="type">The type to be read</param>
         /// <returns></returns>

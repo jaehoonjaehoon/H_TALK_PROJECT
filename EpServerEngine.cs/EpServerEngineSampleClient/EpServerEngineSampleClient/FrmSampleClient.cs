@@ -17,10 +17,10 @@ namespace EpServerEngineSampleClient
     public partial class FrmSampleClient : Form,INetworkClientCallback
     {
         INetworkClient m_client = new IocpTcpClient();
-        private string clientName = "Guest";
-        private string IPAddr;
-        private string Port;
+        private string IPAddr = null;
+        private string Port = null;
         private bool bIsConAddrAndPort = false;
+        List<string> passWord = new List<string>();
 
         public FrmSampleClient()
         {
@@ -28,23 +28,21 @@ namespace EpServerEngineSampleClient
 
             bIsConAddrAndPort = ReadFile.ReadFileAndSetValue(Var.ReadIPandPortTextFilePath, Var.ReadIPandPortTextFileName,
                 ref IPAddr, ref Port);
+            
+
+            Init();
+            
         }
 
-        //private void btnSend_Click(object sender, EventArgs e)
-        //{
-        //    string sendText = tbSend.Text.Trim();
-        //    if (sendText.Length <= 0)
-        //    {
-        //        MessageBox.Show("Please type in something to send.");
-        //    }
-        //    byte[] bytes = BytesFromString(sendText);
-        //    Packet packet=new Packet(bytes,bytes.Count(),false);
-        //    m_client.Send(packet);
-        //}
+        public void Init()
+        {
+            TB_ID_INPUT.Text = "ID";
+            TB_PWD_INPUT.Text = "PASSWORD";
+            TB_PWD_INPUT.PasswordChar = '*';
 
+        }
         public void OnConnected(INetworkClient client, ConnectStatus status)
         {
-            MessageBox.Show("Connected to the server!");
         }
 
         public void OnReceived(INetworkClient client, Packet receivedPacket)
@@ -80,19 +78,6 @@ namespace EpServerEngineSampleClient
             MessageBox.Show("Disconnected from the server!");
         }
 
-        delegate void AddMsg_Involk(string message);
-        public void AddMsg(string message)
-        {
-            //if (tbReceived.InvokeRequired)
-            //{
-            //    AddMsg_Involk CI = new AddMsg_Involk(AddMsg);
-            //    tbReceived.Invoke(CI, message);
-            //}
-            //else
-            //{
-            //    tbReceived.Text += message + "\r\n";
-            //}
-        }
 
         String StringFromByteArr(byte[] bytes)
         {
@@ -110,8 +95,36 @@ namespace EpServerEngineSampleClient
 
         private void FrmSampleClient_Load(object sender, EventArgs e)
         {
-            ClientOps ops = new ClientOps( this, clientName, Port);
+            ClientOps ops = new ClientOps( this, IPAddr, Port);
             m_client.Connect(ops);
+
+        }
+        private void TB_INPUT_Enter(object sender, EventArgs e)
+        {
+            if ("ID" == TB_ID_INPUT.Text) TB_ID_INPUT.Text = "";
+        }
+
+        private void TB_PWD_INPUT_Enter(object sender, EventArgs e)
+        {
+            if ("PASSWORD" == TB_PWD_INPUT.Text) TB_PWD_INPUT.Text = "";
+        }
+
+        private void PB_ADD_USER_Click(object sender, EventArgs e)
+        {
+            SignUpForm signUp = new SignUpForm();
+            signUp.Show();
+        }
+
+        private void PB_LOGIN_Click(object sender, EventArgs e)
+        {
+            // id와 패스워드를 서버에게 보낸다.
+            // 서버는 해당 패킷을 읽고
+            // 체크를 해준다.
+            // 그다음에 로그인 성공 관련 패킷을 날린다.
+            // 성공이 되면 폼은 채팅방으로 전환이 된다.
+
+            Byte[] packet;
+
         }
     }
 }

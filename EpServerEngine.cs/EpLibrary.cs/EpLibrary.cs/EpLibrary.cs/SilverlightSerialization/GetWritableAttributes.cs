@@ -9,10 +9,10 @@ namespace EpLibrary.cs
     public class GetWritableAttributes
     {
         private static readonly Dictionary<RuntimeTypeHandle, GetSet[][][]> PropertyAccess = new Dictionary<RuntimeTypeHandle, GetSet[][][]>();
-        /// <summary>
+        
         /// Dictionary of all the used objects to check if properties are different
         /// to those set during construction
-        /// </summary>
+        
         private static readonly Dictionary<RuntimeTypeHandle, object> Vanilla = new Dictionary<RuntimeTypeHandle, object>();
 
         public static Entry[] GetProperties(object obj)

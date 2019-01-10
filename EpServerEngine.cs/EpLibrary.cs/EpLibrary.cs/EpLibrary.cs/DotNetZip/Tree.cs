@@ -169,9 +169,9 @@ namespace EpLibrary.cs
         };
 
         
-        /// <summary>
+        
         /// Map from a distance to a distance code.
-        /// </summary>
+        
         /// <remarks> 
         /// No side effects. _dist_code[256] and _dist_code[257] are never used.
         /// </remarks>

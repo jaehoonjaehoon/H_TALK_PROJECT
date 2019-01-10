@@ -69,9 +69,9 @@ using Interop=System.Runtime.InteropServices;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// Encoder and Decoder for ZLIB and DEFLATE (IETF RFC1950 and RFC1951).
-    /// </summary>
+    
     ///
     /// <remarks>
     /// This class compresses and decompresses data according to the Deflate algorithm
@@ -86,57 +86,57 @@ namespace EpLibrary.cs
 #endif
     sealed public class ZlibCodec
     {
-        /// <summary>
+        
         /// The buffer from which data is taken.
-        /// </summary>
+        
         public byte[] InputBuffer;
 
-        /// <summary>
+        
         /// An index into the InputBuffer array, indicating where to start reading. 
-        /// </summary>
+        
         public int NextIn;
 
-        /// <summary>
+        
         /// The number of bytes available in the InputBuffer, starting at NextIn. 
-        /// </summary>
+        
         /// <remarks>
         /// Generally you should set this to InputBuffer.Length before the first Inflate() or Deflate() call. 
         /// The class will update this number as calls to Inflate/Deflate are made.
         /// </remarks>
         public int AvailableBytesIn;
 
-        /// <summary>
+        
         /// Total number of bytes read so far, through all calls to Inflate()/Deflate().
-        /// </summary>
+        
         public long TotalBytesIn;
 
-        /// <summary>
+        
         /// Buffer to store output data.
-        /// </summary>
+        
         public byte[] OutputBuffer;
 
-        /// <summary>
+        
         /// An index into the OutputBuffer array, indicating where to start writing. 
-        /// </summary>
+        
         public int NextOut;
 
-        /// <summary>
+        
         /// The number of bytes available in the OutputBuffer, starting at NextOut. 
-        /// </summary>
+        
         /// <remarks>
         /// Generally you should set this to OutputBuffer.Length before the first Inflate() or Deflate() call. 
         /// The class will update this number as calls to Inflate/Deflate are made.
         /// </remarks>
         public int AvailableBytesOut;
 
-        /// <summary>
+        
         /// Total number of bytes written to the output so far, through all calls to Inflate()/Deflate().
-        /// </summary>
+        
         public long TotalBytesOut;
 
-        /// <summary>
+        
         /// used for diagnostics, when something goes wrong!
-        /// </summary>
+        
         public System.String Message;
 
         internal DeflateManager dstate;
@@ -144,14 +144,14 @@ namespace EpLibrary.cs
 
         internal uint _Adler32;
 
-        /// <summary>
+        
         /// The compression level to use in this codec.  Useful only in compression mode.
-        /// </summary>
+        
         public CompressionLevel CompressLevel = CompressionLevel.Default;
 
-        /// <summary>
+        
         /// The number of Window Bits to use.  
-        /// </summary>
+        
         /// <remarks>
         /// This gauges the size of the sliding window, and hence the 
         /// compression effectiveness as well as memory consumption. It's best to just leave this 
@@ -160,9 +160,9 @@ namespace EpLibrary.cs
         /// </remarks>
         public int WindowBits = ZlibConstants.WindowBitsDefault;
 
-        /// <summary>
+        
         /// The compression strategy to use.
-        /// </summary>
+        
         /// <remarks>
         /// This is only effective in compression.  The theory offered by ZLIB is that different
         /// strategies could potentially produce significant differences in compression behavior
@@ -176,15 +176,15 @@ namespace EpLibrary.cs
         public CompressionStrategy Strategy = CompressionStrategy.Default;
 
 
-        /// <summary>
+        
         /// The Adler32 checksum on the data transferred through the codec so far. You probably don't need to look at this.
-        /// </summary>
+        
         public int Adler32 { get { return (int)_Adler32; } }
 
 
-        /// <summary>
+        
         /// Create a ZlibCodec.
-        /// </summary>
+        
         /// <remarks>
         /// If you use this default constructor, you will later have to explicitly call 
         /// InitializeInflate() or InitializeDeflate() before using the ZlibCodec to compress 
@@ -192,9 +192,9 @@ namespace EpLibrary.cs
         /// </remarks>
         public ZlibCodec() { }
 
-        /// <summary>
+        
         /// Create a ZlibCodec that either compresses or decompresses.
-        /// </summary>
+        
         /// <param name="mode">
         /// Indicates whether the codec should compress (deflate) or decompress (inflate).
         /// </param>
@@ -213,9 +213,9 @@ namespace EpLibrary.cs
             else throw new ZlibException("Invalid ZlibStreamFlavor.");
         }
 
-        /// <summary>
+        
         /// Initialize the inflation state. 
-        /// </summary>
+        
         /// <remarks>
         /// It is not necessary to call this before using the ZlibCodec to inflate data; 
         /// It is implicitly called when you call the constructor.
@@ -226,10 +226,10 @@ namespace EpLibrary.cs
             return InitializeInflate(this.WindowBits);
         }
 
-        /// <summary>
+        
         /// Initialize the inflation state with an explicit flag to
         /// govern the handling of RFC1950 header bytes.
-        /// </summary>
+        
         ///
         /// <remarks>
         /// By default, the ZLIB header defined in <see
@@ -249,9 +249,9 @@ namespace EpLibrary.cs
             return InitializeInflate(this.WindowBits, expectRfc1950Header);
         }
 
-        /// <summary>
+        
         /// Initialize the ZlibCodec for inflation, with the specified number of window bits. 
-        /// </summary>
+        
         /// <param name="windowBits">The number of window bits to use. If you need to ask what that is, 
         /// then you shouldn't be calling this initializer.</param>
         /// <returns>Z_OK if all goes well.</returns>
@@ -261,10 +261,10 @@ namespace EpLibrary.cs
             return InitializeInflate(windowBits, true);
         }
 
-        /// <summary>
+        
         /// Initialize the inflation state with an explicit flag to govern the handling of
         /// RFC1950 header bytes. 
-        /// </summary>
+        
         ///
         /// <remarks>
         /// If you want to read a zlib stream you should specify true for
@@ -288,9 +288,9 @@ namespace EpLibrary.cs
             return istate.Initialize(this, windowBits);
         }
 
-        /// <summary>
+        
         /// Inflate the data in the InputBuffer, placing the result in the OutputBuffer.
-        /// </summary>
+        
         /// <remarks>
         /// You must have set InputBuffer and OutputBuffer, NextIn and NextOut, and AvailableBytesIn and 
         /// AvailableBytesOut  before calling this method.
@@ -359,9 +359,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Ends an inflation session. 
-        /// </summary>
+        
         /// <remarks>
         /// Call this after successively calling Inflate().  This will cause all buffers to be flushed. 
         /// After calling this you cannot call Inflate() without a intervening call to one of the
@@ -377,9 +377,9 @@ namespace EpLibrary.cs
             return ret;
         }
 
-        /// <summary>
+        
         /// I don't know what this does!
-        /// </summary>
+        
         /// <returns>Z_OK if everything goes well.</returns>
         public int SyncInflate()
         {
@@ -388,9 +388,9 @@ namespace EpLibrary.cs
             return istate.Sync();
         }
 
-        /// <summary>
+        
         /// Initialize the ZlibCodec for deflation operation.
-        /// </summary>
+        
         /// <remarks>
         /// The codec will use the MAX window bits and the default level of compression.
         /// </remarks>
@@ -433,9 +433,9 @@ namespace EpLibrary.cs
             return _InternalInitializeDeflate(true);
         }
 
-        /// <summary>
+        
         /// Initialize the ZlibCodec for deflation operation, using the specified CompressionLevel.
-        /// </summary>
+        
         /// <remarks>
         /// The codec will use the maximum window bits (15) and the specified
         /// CompressionLevel.  It will emit a ZLIB stream as it compresses.
@@ -449,10 +449,10 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Initialize the ZlibCodec for deflation operation, using the specified CompressionLevel, 
         /// and the explicit flag governing whether to emit an RFC1950 header byte pair.
-        /// </summary>
+        
         /// <remarks>
         /// The codec will use the maximum window bits (15) and the specified CompressionLevel.
         /// If you want to generate a zlib stream, you should specify true for
@@ -470,10 +470,10 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Initialize the ZlibCodec for deflation operation, using the specified CompressionLevel, 
         /// and the specified number of window bits. 
-        /// </summary>
+        
         /// <remarks>
         /// The codec will use the specified number of window bits and the specified CompressionLevel.
         /// </remarks>
@@ -487,11 +487,11 @@ namespace EpLibrary.cs
             return _InternalInitializeDeflate(true);
         }
 
-        /// <summary>
+        
         /// Initialize the ZlibCodec for deflation operation, using the specified
         /// CompressionLevel, the specified number of window bits, and the explicit flag
         /// governing whether to emit an RFC1950 header byte pair.
-        /// </summary>
+        
         ///
         /// <param name="level">The compression level for the codec.</param>
         /// <param name="wantRfc1950Header">whether to emit an initial RFC1950 byte pair in the compressed stream.</param>
@@ -513,9 +513,9 @@ namespace EpLibrary.cs
             return dstate.Initialize(this, this.CompressLevel, this.WindowBits, this.Strategy);
         }
 
-        /// <summary>
+        
         /// Deflate one batch of data.
-        /// </summary>
+        
         /// <remarks>
         /// You must have set InputBuffer and OutputBuffer before calling this method.
         /// </remarks>
@@ -588,9 +588,9 @@ namespace EpLibrary.cs
             return dstate.Deflate(flush);
         }
 
-        /// <summary>
+        
         /// End a deflation session.
-        /// </summary>
+        
         /// <remarks>
         /// Call this after making a series of one or more calls to Deflate(). All buffers are flushed.
         /// </remarks>
@@ -605,9 +605,9 @@ namespace EpLibrary.cs
             return ZlibConstants.Z_OK; //ret;
         }
 
-        /// <summary>
+        
         /// Reset a codec for another deflation session.
-        /// </summary>
+        
         /// <remarks>
         /// Call this to reset the deflation state.  For example if a thread is deflating
         /// non-consecutive blocks, you can call Reset() after the Deflate(Sync) of the first
@@ -622,9 +622,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Set the CompressionStrategy and CompressionLevel for a deflation session.
-        /// </summary>
+        
         /// <param name="level">the level of compression to use.</param>
         /// <param name="strategy">the strategy to use for compression.</param>
         /// <returns>Z_OK if all goes well.</returns>
@@ -636,9 +636,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Set the dictionary to be used for either Inflation or Deflation.
-        /// </summary>
+        
         /// <param name="dictionary">The dictionary bytes to use.</param>
         /// <returns>Z_OK if all goes well.</returns>
         public int SetDictionary(byte[] dictionary)

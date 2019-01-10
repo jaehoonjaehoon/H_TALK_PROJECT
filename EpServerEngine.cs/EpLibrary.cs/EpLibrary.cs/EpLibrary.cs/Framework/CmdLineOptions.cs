@@ -43,46 +43,46 @@ using System.Text;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// A CmdLine Options class.
-    /// </summary>
+    
     public class CmdLineOptions: Dictionary<String,CmdLineOptions.CmdArgs>
     {
-        /// <summary>
+        
         /// A CmdLine Argument List class.
-        /// </summary>
+        
         public class CmdArgs
         {
             public CmdArgs()
             {
 
             }
-            /// <summary>
+            
             /// List of arguments
-            /// </summary>
+            
             public List<String> m_args = new List<String>();
         }
 
-        /// <summary>
+        
         /// Default constructor
-        /// </summary>
+        
         public CmdLineOptions(): base(StringComparer.OrdinalIgnoreCase)
         {
 
         }
 
-        /// <summary>
+        
         /// Default copy constructor
-        /// </summary>
+        
         /// <param name="b">the object to copy from</param>
         public CmdLineOptions(CmdLineOptions b):base(b)
         {
 
         }
 
-        /// <summary>
+        
         /// Parse the Command Line Argument with given.
-        /// </summary>
+        
         /// <param name="argv">the array of argument strings.</param>
         /// <returns>the number of CmdLine Options parsed</returns>
         public int Parse(String[] argv)
@@ -107,9 +107,9 @@ namespace EpLibrary.cs
             return Count;
         }
 
-        /// <summary>
+        
         /// Check if CmdLineOptions contain the given option
-        /// </summary>
+        
         /// <param name="option">the option string to check</param>
         /// <returns>true if exists otherwise false</returns>
 		public bool HasOption(String option)
@@ -117,9 +117,9 @@ namespace EpLibrary.cs
             return (ContainsKey(option));
         }
 
-        /// <summary>
+        
         /// Get argument of given option at given index.
-        /// </summary>
+        
         /// <param name="option">the option string to get argument</param>
         /// <param name="idx">the index of the arguments of given option</param>
         /// <param name="defaultArg">the default argument string if not found </param>
@@ -145,9 +145,9 @@ namespace EpLibrary.cs
 		@return the argument string found.
 		@remark if the argument does not exist then throws exception 0.
 		*/
-        /// <summary>
+        
         /// Get argument of given option at given index.
-        /// </summary>
+        
         /// <param name="option">the option string to get argument</param>
         /// <param name="idx">the index of the arguments of given option</param>
         /// <returns>the argument string found.</returns>
@@ -158,9 +158,9 @@ namespace EpLibrary.cs
             return value;
         }
 
-        /// <summary>
+        
         /// Get the number of arguments of given option
-        /// </summary>
+        
         /// <param name="option">the option string to get the number of arguments</param>
         /// <returns>the number of arguments of given option</returns>
         /// <remarks>if the option does not exist then return -1</remarks>
@@ -174,9 +174,9 @@ namespace EpLibrary.cs
             return retCount;
         }
 
-        /// <summary>
+        
         /// Check if given option is an option (starts with '-')
-        /// </summary>
+        
         /// <param name="option">the option string to check</param>
         /// <returns>true if given option string is an option otherwise false.</returns>
 		protected bool isOption(String option)

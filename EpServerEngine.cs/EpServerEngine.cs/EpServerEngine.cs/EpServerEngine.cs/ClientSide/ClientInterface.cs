@@ -46,34 +46,13 @@ using System.Threading;
 
 namespace EpServerEngine.cs
 {
-    /// <summary>
-    /// Client Option class
-    /// </summary>
     public sealed class ClientOps{
-        /// <summary>
-        /// callback object
-        /// </summary>
 		public INetworkClientCallback callBackObj;
-        /// <summary>
-        /// hostname
-        /// </summary>
         public String hostName;
-        /// <summary>
-        /// port
-        /// </summary>
 		public String port;
-        /// <summary>
-        /// flag for no delay
-        /// </summary>
         public bool noDelay;
-        /// <summary>
-        /// wait time in millisecond
-        /// </summary>
         public int waitTimeInMilliSec;
 
-        /// <summary>
-        /// Default constructor
-        /// </summary>
         public ClientOps()
 		{
 			callBackObj=null;
@@ -82,14 +61,6 @@ namespace EpServerEngine.cs
             noDelay = true;
             waitTimeInMilliSec = Timeout.Infinite;
 		}
-        /// <summary>
-        /// Default constructor
-        /// </summary>
-        /// <param name="callBackObj">callback object</param>
-        /// <param name="hostName">hostname</param>
-        /// <param name="port">port</param>
-        /// <param name="noDelay">flag for no delay</param>
-        /// <param name="waitTimeInMilliSec">wait time in millisecond</param>
         public ClientOps(INetworkClientCallback callBackObj, String hostName, String port, bool noDelay = true, int waitTimeInMilliSec = Timeout.Infinite)
         {
             this.callBackObj = callBackObj;
@@ -98,81 +69,32 @@ namespace EpServerEngine.cs
             this.noDelay = noDelay;
             this.waitTimeInMilliSec = waitTimeInMilliSec;
         }
-        /// <summary>
-        /// default client option
-        /// </summary>
 		public static ClientOps defaultClientOps=new ClientOps();
 	};
 
-    /// <summary>
-    /// Client interface
-    /// </summary>
     public interface INetworkClient
     {
-        /// <summary>
-        /// Return the hostname
-        /// </summary>
-        /// <returns>hostname</returns>
         String GetHostName();
-
-        /// <summary>
-        /// Return the port
-        /// </summary>
-        /// <returns>port</returns>
         String GetPort();
 
-        /// <summary>
-        /// Connect to server with given option
-        /// </summary>
-        /// <param name="ops">option for client</param>
         void Connect(ClientOps ops);
 
-        /// <summary>
-        /// Disconnect from the server
-        /// </summary>
         void Disconnect();
 
-        /// <summary>
-        /// Check if the connection is alive
-        /// </summary>
-        /// <returns></returns>
         bool IsConnectionAlive();
 
-        /// <summary>
-        /// Send given packet to the server
-        /// </summary>
-        /// <param name="packet">packet to send</param>
         void Send(Packet packet);
 
         
     }
 
 	public interface INetworkClientCallback{
-        /// <summary>
-        /// Connection callback
-        /// </summary>
-        /// <param name="client">client</param>
-        /// <param name="status">connection status</param>
         void OnConnected(INetworkClient client, ConnectStatus status);
 
-        /// <summary>
-        /// Receive callback
-        /// </summary>
-        /// <param name="client">client</param>
-        /// <param name="receivedPacket">received packet</param>
 	    void OnReceived(INetworkClient client, Packet receivedPacket);
 
-        /// <summary>
-        /// Send callback
-        /// </summary>
-        /// <param name="client">client</param>
-        /// <param name="status">send status</param>
         void OnSent(INetworkClient client, SendStatus status);
 
-        /// <summary>
-        /// Disconnect callback
-        /// </summary>
-        /// <param name="client">client</param>
         void OnDisconnect(INetworkClient client);
 	};
 }

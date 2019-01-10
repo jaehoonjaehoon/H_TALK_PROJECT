@@ -43,9 +43,9 @@ using System.Collections;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// A template PriorityQueue class
-    /// </summary>
+    
     /// <typeparam name="T">Queue element type</typeparam>
     public sealed class PriorityQueue<T> where T : IComparable
     {
@@ -61,9 +61,9 @@ namespace EpLibrary.cs
             m_data = new List<T>(b.m_data);
         }
 
-        /// <summary>
+        
         /// Insert the new item into the queue.
-        /// </summary>
+        
         /// <param name="queueItem">The inserting item.</param>
         public void Enqueue(T queueItem)
         {
@@ -71,17 +71,17 @@ namespace EpLibrary.cs
             m_data.Sort();
         }
 
-        /// <summary>
+        
         /// Clear the queue
-        /// </summary>
+        
         public void Clear()
         {
             m_data.Clear();
         }
 
-        /// <summary>
+        
         /// Remove the first item from the queue.
-        /// </summary>
+        
         /// <returns>removed item</returns>
         public T Dequeue()
         {
@@ -90,9 +90,9 @@ namespace EpLibrary.cs
             return frontItem;
         }
 
-        /// <summary>
+        
         /// Return the first item within the queue.
-        /// </summary>
+        
         /// <returns>the first element of the queue.</returns>
         public T Peek()
         {
@@ -100,9 +100,9 @@ namespace EpLibrary.cs
             return frontItem;
         }
 
-        /// <summary>
+        
         /// Check if the given item exists in the queue.
-        /// </summary>
+        
         /// <param name="queueItem">item to check</param>
         /// <returns>true if exists, otherwise false</returns>
         public bool Contains(T queueItem)
@@ -110,9 +110,9 @@ namespace EpLibrary.cs
             return m_data.Contains(queueItem);
         }
 
-        /// <summary>
+        
         /// Return the number of element in the queue.
-        /// </summary>
+        
         public int Count
         {
             get

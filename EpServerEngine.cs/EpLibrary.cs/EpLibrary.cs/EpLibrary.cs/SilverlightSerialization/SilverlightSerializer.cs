@@ -23,37 +23,37 @@ using System.Text;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     ///   Indicates that a property or field should not be serialized
-    /// </summary>
+    
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Class)]
     public class DoNotSerialize : Attribute
     {
 
     }
-    /// <summary>
+    
     /// Used in checksum mode to flag a property as not being part
     /// of the "meaning" of an object - i.e. two objects with the
     /// same checksum "mean" the same thing, even if some of the
     /// properties are different, those properties would not be
     /// relevant to the purpose of the object
-    /// </summary>
+    
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
     public class DoNotChecksum : Attribute
     {
     }
-    /// <summary>
+    
     /// Attribute used to flag IDs this can be useful for check object
     /// consistence when the serializer is in a mode that does not 
     /// serialize identifiers
-    /// </summary>
+    
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
     public class SerializerId : Attribute
     {
     }
-    /// <summary>
+    
     /// Always use an event to create instances of this type
-    /// </summary>
+    
     [AttributeUsage(AttributeTargets.Class)]
     public class CreateUsingEvent : Attribute
     {
@@ -76,10 +76,10 @@ namespace EpLibrary.cs
         }
     }
 
-    /// <summary>
+    
     ///   Silverlight/.NET compatible binary serializer with suppression support
     ///   produces compact representations, suitable for further compression
-    /// </summary>
+    
     public static class SilverlightSerializer
     {
         private static readonly Dictionary<RuntimeTypeHandle, IEnumerable<FieldInfo>> FieldLists = new Dictionary<RuntimeTypeHandle, IEnumerable<FieldInfo>>();
@@ -116,40 +116,40 @@ namespace EpLibrary.cs
             return (T)Deserialize(Serialize(item));
         }
 
-        /// <summary>
+        
         /// Arguments for a missing type event
-        /// </summary>
+        
         public class TypeMappingEventArgs : EventArgs
         {
-            /// <summary>
+            
             /// The missing types name
-            /// </summary>
+            
             public string TypeName = String.Empty;
-            /// <summary>
+            
             /// Supply a type to use instead
-            /// </summary>
+            
             public Type UseType = null;
         }
 
-        /// <summary>
+        
         /// Arguments for object creation event
-        /// </summary>
+        
         public class ObjectMappingEventArgs : EventArgs
         {
-            /// <summary>
+            
             /// The type that cannot be
-            /// </summary>
+            
             public Type TypeToConstruct;
-            /// <summary>
+            
             /// Supply a type to use instead
-            /// </summary>
+            
             public object Instance = null;
         }
 
 
-        /// <summary>
+        
         /// Event that is fired if a particular type cannot be instantiated
-        /// </summary>
+        
         public static event EventHandler<ObjectMappingEventArgs> CreateType;
 
 
@@ -161,9 +161,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Event that is fired if a particular type cannot be found
-        /// </summary>
+        
         public static event EventHandler<TypeMappingEventArgs> MapMissingType;
 
 
@@ -174,9 +174,9 @@ namespace EpLibrary.cs
                 handler(null, e);
         }
 
-        /// <summary>
+        
         /// Put the serializer into Checksum mode
-        /// </summary>
+        
         public static bool IsChecksum
         {
             get
@@ -195,9 +195,9 @@ namespace EpLibrary.cs
         //    set;
         //}
 
-        /// <summary>
+        
         /// Deserialize to a type
-        /// </summary>
+        
         /// <param name="array"></param>
         /// <returns></returns>
         public static T Deserialize<T>(byte[] array) where T : class
@@ -206,9 +206,9 @@ namespace EpLibrary.cs
 
         }
 
-        /// <summary>
+        
         /// Deserialize from a stream to a type
-        /// </summary>
+        
         /// <param name="stream"></param>
         /// <returns></returns>
         public static T Deserialize<T>(Stream stream) where T : class
@@ -216,12 +216,12 @@ namespace EpLibrary.cs
             return Deserialize(stream) as T;
         }
 
-        /// <summary>
+        
         /// Get a checksum for an item.  Checksums "should" be different 
         /// for every object that has a different "meaning".  You can
         /// flag properties as DoNotChecksum if that helps to keep decorative
         /// properties away from the checksum whilst including meaningful ones
-        /// </summary>
+        
         /// <param name="item">The object to checksum</param>
         /// <returns>A checksum string, this includes no illegal characters and can be used as a file name</returns>
         public static string GetChecksum(object item)
@@ -256,9 +256,9 @@ namespace EpLibrary.cs
         //Dictionary to ensure we only scan an assembly once
         private static readonly Dictionary<Assembly, bool> Assemblies = new Dictionary<Assembly, bool>();
 
-        /// <summary>
+        
         /// Register all of the custom serializers in an assembly
-        /// </summary>
+        
         /// <param name="assembly">Leave blank to register the assembly that the method is called from, or pass an assembly</param>
         public static void RegisterSerializationAssembly(Assembly assembly = null)
         {
@@ -276,9 +276,9 @@ namespace EpLibrary.cs
         //Function to be called when scanning types
         internal delegate void ScanTypeFunction(Type type, Attribute attribute);
 
-        /// <summary>
+        
         /// Scan all of the types in an assembly for a particular attribute
-        /// </summary>
+        
         /// <param name="function">The function to call</param>
         /// <param name="assembly">The assembly to scan</param>
         /// <param name="attribute">The attribute to look for</param>
@@ -307,19 +307,19 @@ namespace EpLibrary.cs
 
             }
         }
-        /// <summary>
+        
         /// Write persistence debugging information to the debug output window
         /// often used with Verbose
-        /// </summary>
+        
         public static bool IsLoud;
-        /// <summary>
+        
         /// Write all types, even if they are known, often used with Loud mode
-        /// </summary>
+        
         public static bool Verbose;
 
-        /// <summary>
+        
         ///   Caches and returns property info for a type
-        /// </summary>
+        
         /// <param name = "itm">The type that should have its property info returned</param>
         /// <returns>An enumeration of PropertyInfo objects</returns>
         /// <remarks>
@@ -387,9 +387,9 @@ namespace EpLibrary.cs
         //    SerializerType = typeof(BinarySerializer);
         //}
 
-        /// <summary>
+        
         ///   Caches and returns field info for a type
-        /// </summary>
+        
         /// <param name = "itm">The type that should have its field info returned</param>
         /// <returns>An enumeration of FieldInfo objects</returns>
         /// <remarks>
@@ -412,9 +412,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   Returns a token that represents the name of the property
-        /// </summary>
+        
         /// <param name = "name">The name for which to return a token</param>
         /// <returns>A 2 byte token representing the name</returns>
         internal static ushort GetPropertyDefinitionId(string name)
@@ -469,9 +469,9 @@ namespace EpLibrary.cs
 
 
 
-        /// <summary>
+        
         /// Deserializes from a stream, potentially into an existing instance
-        /// </summary>
+        
         /// <param name="inputStream">Stream to deserialize from</param>
         /// <param name="instance">Instance to use</param>
         /// <returns></returns>
@@ -549,10 +549,10 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   Convert a previously serialized object from a byte array 
         ///   back into a .NET object
-        /// </summary>
+        
         /// <param name = "bytes">The data stream for the object</param>
         /// <returns>The rehydrated object represented by the data supplied</returns>
         public static object Deserialize(byte[] bytes)
@@ -563,10 +563,10 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   Convert a previously serialized object from a byte array 
         ///   back into a .NET object
-        /// </summary>
+        
         /// <param name = "bytes">The data stream for the object</param>
         /// <returns>The rehydrated object represented by the data supplied</returns>
         public static void DeserializeInto(byte[] bytes, object instance)
@@ -578,9 +578,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Creates a set of stacks on the current thread
-        /// </summary>
+        
         private static void CreateStacks()
         {
             if (PiStack == null)
@@ -594,9 +594,9 @@ namespace EpLibrary.cs
         }
 
         #region Old Deserialization
-        /// <summary>
+        
         ///   Deserializes an object or primitive from the stream
-        /// </summary>
+        
         /// <param name = "reader">The reader of the binary file</param>
         /// <param name = "itemType">The expected type of the item being read (supports compact format)</param>
         /// <returns>The value read from the file</returns>
@@ -683,9 +683,9 @@ namespace EpLibrary.cs
 
         }
 
-        /// <summary>
+        
         ///   Deserializes an array of values
-        /// </summary>
+        
         /// <param name = "itemType">The type of the array</param>
         /// <param name = "reader">The reader of the stream</param>
         /// <returns>The deserialized array</returns>
@@ -730,9 +730,9 @@ namespace EpLibrary.cs
             return array;
         }
 
-        /// <summary>
+        
         ///   Deserializes a multi-dimensional array of values
-        /// </summary>
+        
         /// <param name = "itemType">The type of the array</param>
         /// <param name = "reader">The reader of the stream</param>
         /// <param name="count">The base size of the multi-dimensional array</param>
@@ -795,9 +795,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   Deserializes a dictionary from storage, handles generic types with storage optimization
-        /// </summary>
+        
         /// <param name = "o">The newly created dictionary</param>
         /// <param name = "itemType">The type of the dictionary</param>
         /// <param name = "reader">The binary reader for the current bytes</param>
@@ -826,9 +826,9 @@ namespace EpLibrary.cs
             return o;
         }
 
-        /// <summary>
+        
         ///   Deserialize a list from the data stream
-        /// </summary>
+        
         /// <param name = "o">The newly created list</param>
         /// <param name = "itemType">The type of the list</param>
         /// <param name = "reader">The reader for the current bytes</param>
@@ -851,9 +851,9 @@ namespace EpLibrary.cs
             return o;
         }
 
-        /// <summary>
+        
         ///   Deserializes a class based object that is not a collection, looks for both public properties and fields
-        /// </summary>
+        
         /// <param name = "o">The object being deserialized</param>
         /// <param name = "itemType">The type of the object</param>
         /// <param name = "reader">The reader for the current stream of bytes</param>
@@ -866,9 +866,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Deserializes the properties of an object from the stream
-        /// </summary>
+        
         /// <param name = "reader">The reader of the bytes in the stream</param>
         /// <param name = "itemType">The type of the object</param>
         /// <param name = "o">The object to deserialize</param>
@@ -916,9 +916,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   Deserializes the fields of an object from the stream
-        /// </summary>
+        
         /// <param name = "reader">The reader of the bytes in the stream</param>
         /// <param name = "itemType">The type of the object</param>
         /// <param name = "o">The object to deserialize</param>
@@ -959,9 +959,9 @@ namespace EpLibrary.cs
 
         #region New Deserialization
 
-        /// <summary>
+        
         ///   Deserializes an object or primitive from the stream
-        /// </summary>
+        
         /// <param name="entry"></param>
         /// <param name="storage"></param>
         /// <returns>The value read from the file</returns>
@@ -1103,9 +1103,9 @@ namespace EpLibrary.cs
             return result2;
         }
 
-        /// <summary>
+        
         ///   Deserializes an array of values
-        /// </summary>
+        
         /// <param name = "itemType">The type of the array</param>
         /// <param name="storage"></param>
         /// <param name="count"></param>
@@ -1151,9 +1151,9 @@ namespace EpLibrary.cs
 
         }
 
-        /// <summary>
+        
         ///   Deserializes a multi-dimensional array of values
-        /// </summary>
+        
         /// <param name = "itemType">The type of the array</param>
         /// <param name="storage"></param>
         /// <param name="count">The base size of the multi-dimensional array</param>
@@ -1218,9 +1218,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   Deserializes a dictionary from storage, handles generic types with storage optimization
-        /// </summary>
+        
         /// <param name = "o">The newly created dictionary</param>
         /// <param name = "itemType">The type of the dictionary</param>
         /// <param name="storage"></param>
@@ -1270,9 +1270,9 @@ namespace EpLibrary.cs
             return o;
         }
 
-        /// <summary>
+        
         ///   Deserialize a list from the data stream
-        /// </summary>
+        
         /// <param name = "o">The newly created list</param>
         /// <param name = "itemType">The type of the list</param>
         /// <param name="storage"></param>
@@ -1308,9 +1308,9 @@ namespace EpLibrary.cs
             return o;
         }
 
-        /// <summary>
+        
         ///   Deserializes a class based object that is not a collection, looks for both public properties and fields
-        /// </summary>
+        
         /// <param name = "o">The object being deserialized</param>
         /// <param name = "itemType">The type of the object</param>
         /// <param name="storage"></param>
@@ -1327,9 +1327,9 @@ namespace EpLibrary.cs
 
 
 
-        /// <summary>
+        
         ///   Deserializes the properties of an object from the stream
-        /// </summary>
+        
         /// <param name="storage"></param>
         /// <param name = "itemType">The type of the object</param>
         /// <param name = "o">The object to deserialize</param>
@@ -1389,9 +1389,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Deserializes the fields of an object from the stream
-        /// </summary>
+        
         /// <param name = "reader">The reader of the bytes in the stream</param>
         /// <param name = "itemType">The type of the object</param>
         /// <param name = "o">The object to deserialize</param>
@@ -1504,9 +1504,9 @@ namespace EpLibrary.cs
 
         }
 
-        /// <summary>
+        
         ///   Serialize an object into an array of bytes
-        /// </summary>
+        
         /// <param name = "item">The object to serialize</param>
         /// <returns>A byte array representation of the item</returns>
         public static byte[] Serialize(object item)
@@ -1519,9 +1519,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   Serialize an object into an array of bytes
-        /// </summary>
+        
         /// <param name = "item">The object to serialize</param>
         /// <param name="makeVerbose">Whether the object should be serialized for forwards compatibility</param>
         /// <returns>A byte array representation of the item</returns>
@@ -1841,9 +1841,9 @@ namespace EpLibrary.cs
 
         #endregion
 
-        /// <summary>
+        
         ///   Return whether the type specified is a simple type that can be serialized fast
-        /// </summary>
+        
         /// <param name = "tp">The type to check</param>
         /// <returns>True if the type is a simple one and can be serialized directly</returns>
         private static bool IsSimpleType(Type tp)
@@ -1856,9 +1856,9 @@ namespace EpLibrary.cs
             WriteProperties(itemType, item, storage);
             WriteFields(itemType, item, storage);
         }
-        /// <summary>
+        
         /// Create an instance of a type
-        /// </summary>
+        
         /// <param name="itemType">The type to construct</param>
         /// <returns></returns>
         internal static object CreateObject(Type itemType)
@@ -2159,9 +2159,9 @@ namespace EpLibrary.cs
             writer.Write((string)value);
         }
 
-        ///// <summary>
+        //
         /////   Write a basic untyped value
-        ///// </summary>
+        //
         ///// <param name = "writer">The writer to commit byte to</param>
         ///// <param name = "value">The value to write</param>
         //internal static void WriteValue(BinaryWriter writer, object value)
@@ -2223,9 +2223,9 @@ namespace EpLibrary.cs
         //        writer.Write((int)value);
         //}
 
-        ///// <summary>
+        //
         /////   Read a basic value from the stream
-        ///// </summary>
+        //
         ///// <param name = "reader">The reader with the stream</param>
         ///// <param name = "tp">The type to read</param>
         ///// <returns>The hydrated value</returns>
@@ -2289,9 +2289,9 @@ namespace EpLibrary.cs
         //    return reader.ReadInt32();
         //}
 
-        /// <summary>
+        
         ///   Write a basic untyped value
-        /// </summary>
+        
         /// <param name = "writer">The writer to commit byte to</param>
         /// <param name = "value">The value to write</param>
         internal static void WriteValue(BinaryWriter writer, object value)
@@ -2305,9 +2305,9 @@ namespace EpLibrary.cs
             write(writer, value);
         }
 
-        /// <summary>
+        
         ///   Read a basic value from the stream
-        /// </summary>
+        
         /// <param name = "reader">The reader with the stream</param>
         /// <param name = "tp">The type to read</param>
         /// <returns>The hydrated value</returns>
@@ -2324,9 +2324,9 @@ namespace EpLibrary.cs
 
         #endregion
 
-        /// <summary>
+        
         ///   Logs a type and returns a unique token for it
-        /// </summary>
+        
         /// <param name = "tp">The type to retrieve a token for</param>
         /// <returns>A 2 byte token representing the type</returns>
         internal static ushort GetTypeId(RuntimeTypeHandle tp)
@@ -2341,23 +2341,23 @@ namespace EpLibrary.cs
             return (ushort)tpId;
         }
 
-        /// <summary>
+        
         /// Stores configurations for entries
-        /// </summary>
+        
         private class EntryConfiguration
         {
             public GetSet Setter;
             public Type Type;
         }
 
-        /// <summary>
+        
         /// Cache for property name to item lookups
-        /// </summary>
+        
         private static readonly Dictionary<Type, Dictionary<string, EntryConfiguration>> StoredTypes = new Dictionary<Type, Dictionary<string, EntryConfiguration>>();
 
-        /// <summary>
+        
         /// Gets a property setter and a standard default type for an entry
-        /// </summary>
+        
         /// <param name="entry"></param>
         private static void UpdateEntryWithName(Entry entry)
         {

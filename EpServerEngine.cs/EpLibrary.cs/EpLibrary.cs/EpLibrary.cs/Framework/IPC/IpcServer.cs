@@ -43,62 +43,62 @@ using System.Threading;
 using EpLibrary.cs;
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// A class for Interprocess Communication Server.
-    /// </summary>
+    
     public sealed class IpcServer : ThreadEx,IpcServerInterface, IpcPipeCallbackInterface
     {
-        /// <summary>
+        
         /// pipe list
-        /// </summary>
+        
         private List<IpcInterface> m_pipes=new List<IpcInterface>();
 
-        /// <summary>
+        
         /// flag whether the server is started
-        /// </summary>
+        
         private bool m_started=false;
 
-        /// <summary>
+        
         /// IPC server options
-        /// </summary>
+        
         private IpcServerOps m_options;
 
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
 		public IpcServer()
         {
         }
 
-        /// <summary>
+        
         /// Default Destructor
-        /// </summary>
+        
 		~IpcServer()
         {
             StopServer();
         }
 
-        /// <summary>
+        
         /// Get the pipe name of server
-        /// </summary>
+        
         /// <returns>the pipe name in string</returns>
 		public string GetFullPipeName()
         {
             return m_options.m_pipeName;
         }
 
-        /// <summary>
+        
         /// Get the Maximum Instances of server
-        /// </summary>
+        
         /// <returns>the Maximum Instances</returns>
 		public int GetMaximumInstances()
         {
             return m_options.m_maximumInstances;
         }
 
-        /// <summary>
+        
         /// Start the server
-        /// </summary>
+        
         /// <param name="ops">the server options</param>
 		public  void StartServer(IpcServerOps ops)
         {
@@ -116,9 +116,9 @@ namespace EpLibrary.cs
             Start();
         }
 
-        /// <summary>
+        
         /// Actual server start function
-        /// </summary>
+        
         protected override void execute()
         {
             IpcStartStatus status = IpcStartStatus.SUCCESS;
@@ -143,27 +143,27 @@ namespace EpLibrary.cs
             
         }
 
-        /// <summary>
+        
         /// Stop the server
-        /// </summary>
+        
         public void StopServer()
         {
             m_started = false;
             ShutdownAllClient();
         }
 
-        /// <summary>
+        
         /// Check if the server is started
-        /// </summary>
+        
         /// <returns>true if the server is started otherwise false</returns>
 		public  bool IsServerStarted()
         {
             return m_started;
         }
 
-        /// <summary>
+        
         /// Terminate all clients' socket connected.
-        /// </summary>
+        
 		public void ShutdownAllClient()
         {
             lock (m_pipes)
@@ -176,27 +176,27 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Get the maximum write data byte size
-        /// </summary>
+        
         /// <returns>the maximum write data byte size</returns>
 		public int GetMaxWriteDataByteSize()
         {
             return m_options.m_numOfReadBytes;
         }
 
-        /// <summary>
+        
         /// Get the maximum read data byte size
-        /// </summary>
+        
         /// <returns>the maximum read data byte size</returns>
 		public  int GetMaxReadDataByteSize()
         {
             return m_options.m_numOfWriteBytes;
         }
 
-        /// <summary>
+        
         ///  When accepted client tries to make connection.
-        /// </summary>
+        
         /// <param name="pipe">the pipe</param>
         /// <param name="status">status of connect</param>
         /// <remarks>hen this function calls, it is right before making connection,
@@ -211,9 +211,9 @@ namespace EpLibrary.cs
             m_options.m_callBackObj.OnNewConnection(this, pipe, status);
         }
 
-        /// <summary>
+        
         /// Received the data from the client.
-        /// </summary>
+        
         /// <param name="pipe">the pipe which received the packet</param>
         /// <param name="receivedData">the received data</param>
         /// <param name="receivedDataByteSize">the received data byte size</param>
@@ -222,9 +222,9 @@ namespace EpLibrary.cs
             m_options.m_callBackObj.OnReadComplete(this, pipe, receivedData, receivedDataByteSize);
         }
 
-        /// <summary>
+        
         /// Received the packet from the client.
-        /// </summary>
+        
         /// <param name="pipe">the pipe which wrote the packet</param>
         /// <param name="status">the status of write</param>
         public void OnWriteComplete(IpcInterface pipe, IpcWriteStatus status)
@@ -232,9 +232,9 @@ namespace EpLibrary.cs
             m_options.m_callBackObj.OnWriteComplete(this, pipe, status);
         }
 
-        /// <summary>
+        
         ///  The pipe is disconnected.
-        /// </summary>
+        
         /// <param name="pipe">the pipe, disconnected.</param>
         public void OnDisconnected(IpcInterface pipe)
         {
@@ -248,9 +248,9 @@ namespace EpLibrary.cs
             m_options.m_callBackObj.OnDisconnected(this, pipe);
         }
 
-        /// <summary>
+        
         /// Return the number of pipe connected
-        /// </summary>
+        
         /// <returns>number of pipe connected</returns>
         public int GetPipeCount()
         {

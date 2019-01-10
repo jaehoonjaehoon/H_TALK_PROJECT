@@ -49,66 +49,66 @@ using EpLibrary.cs;
 
 namespace EpServerEngine.cs
 {
-    /// <summary>
+    
     /// IOCP TCP Socket class
-    /// </summary>
+    
     public sealed class IocpTcpSocket:ThreadEx,INetworkSocket
     {
-        /// <summary>
+        
         /// actual client
-        /// </summary>
+        
         private TcpClient m_client=null;
-        /// <summary>
+        
         /// managing server
-        /// </summary>
+        
         private INetworkServer m_server = null;
-        /// <summary>
+        
         /// IP information
-        /// </summary>
+        
         private IPInfo m_ipInfo;
-        /// <summary>
+        
         /// general lock
-        /// </summary>
+        
         private Object m_generalLock = new Object();
-        /// <summary>
+        
         /// send lock
-        /// </summary>
+        
         private Object m_sendLock = new Object();
-        /// <summary>
+        
         /// send queue lock
-        /// </summary>
+        
         private Object m_sendQueueLock = new Object();
-        /// <summary>
+        
         /// send queue
-        /// </summary>
+        
         private Queue<PacketTransporter> m_sendQueue = new Queue<PacketTransporter>();
-        /// <summary>
+        
         /// callback object
-        /// </summary>
+        
         private INetworkSocketCallback m_callBackObj=null;
         
-        /// <summary>
+        
         /// send event
-        /// </summary>
+        
         private EventEx m_sendEvent = new EventEx();
 
-        /// <summary>
+        
         /// receive size packet
-        /// </summary>
+        
         private Packet m_recvSizePacket = new Packet(null, 4);
-        /// <summary>
+        
         /// send size packet
-        /// </summary>
+        
         private Packet m_sendSizePacket = new Packet(null, 4, false);
 
-        /// <summary>
+        
         /// flag for connection check
-        /// </summary>
+        
         private bool m_isConnected = false;
 
-        /// <summary>
+        
         /// Default constructor
-        /// </summary>
+        
         /// <param name="client">client</param>
         /// <param name="server">managing server</param>
         public IocpTcpSocket(TcpClient client, INetworkServer server):base()
@@ -136,43 +136,43 @@ namespace EpServerEngine.cs
                 Disconnect();
         }
 
-        /// <summary>
+        
         /// Get IP information
-        /// </summary>
+        
         /// <returns>IP information</returns>
         public IPInfo GetIPInfo()
         {
             return m_ipInfo;
         }
 
-        /// <summary>
+        
         /// Get managing server
-        /// </summary>
+        
         /// <returns>managing server</returns>
         public INetworkServer GetServer()
         {
             return m_server;
         }
 
-        /// <summary>
+        
         /// Set socket callback interface
-        /// </summary>
+        
         /// <param name="callBackObj">callback object</param>
         public void SetSocketCallback(INetworkSocketCallback callBackObj)
         {
             m_callBackObj = callBackObj;
         }
-        /// <summary>
+        
         /// Return the socket callback object
-        /// </summary>
+        
         /// <returns>the socket callback object</returns>
         public INetworkSocketCallback GetSocketCallback()
         {
             return m_callBackObj;
         }
-        /// <summary>
+        
         /// Start the new connection, and inform the callback object, that the new connection is made
-        /// </summary>
+        
         protected override void execute()
         {
             lock (m_generalLock)
@@ -184,9 +184,9 @@ namespace EpServerEngine.cs
                 m_callBackObj.OnNewConnection(this);
         }
 
-        /// <summary>
+        
         /// Disconnect the client socket
-        /// </summary>
+        
         public void Disconnect()
         {
             lock (m_generalLock)
@@ -212,9 +212,9 @@ namespace EpServerEngine.cs
             }
         }
 
-        /// <summary>
+        
         /// Check if the connection is alive
-        /// </summary>
+        
         /// <returns>true if connection is alive, otherwise false</returns>
         public bool IsConnectionAlive()
         {
@@ -230,9 +230,9 @@ namespace EpServerEngine.cs
 // 	        }
         }
 
-        /// <summary>
+        
         /// Send given packet to the client
-        /// </summary>
+        
         /// <param name="packet">the packet to send</param>
         public void Send(Packet packet)
         {
@@ -285,56 +285,56 @@ namespace EpServerEngine.cs
             }
         }
 
-        /// <summary>
+        
         /// Enumerator for packet type
-        /// </summary>
+        
         private enum PacketType
         {
-            /// <summary>
+            
             /// Send type
-            /// </summary>
+            
             SIZE = 0,
-            /// <summary>
+            
             /// Receive type
-            /// </summary>
+            
             DATA
         }
-        /// <summary>
+        
         /// Packet Transporter class
-        /// </summary>
+        
         private class PacketTransporter
         {
-            /// <summary>
+            
             /// packet to transport
-            /// </summary>
+            
             public Packet m_packet;
-            /// <summary>
+            
             /// data packet for send
-            /// </summary>
+            
             public Packet m_dataPacket;
-            /// <summary>
+            
             /// offset
-            /// </summary>
+            
             public int m_offset;
-            /// <summary>
+            
             /// packet size in byte
-            /// </summary>
+            
             public int m_size;
-            /// <summary>
+            
             /// client socket
-            /// </summary>
+            
             public IocpTcpSocket m_iocpTcpClient;
-            /// <summary>
+            
             /// packet type
-            /// </summary>
+            
             public PacketType m_packetType;
-            /// <summary>
+            
             /// callback object
-            /// </summary>
+            
             public INetworkSocketCallback m_callBackObj;
-            /// <summary>
+            
             /// Default constructor
-            /// </summary>
+            
             /// <param name="packetType">packet type</param>
             /// <param name="packet">packet</param>
             /// <param name="offset">offset</param>
@@ -352,9 +352,9 @@ namespace EpServerEngine.cs
                 m_callBackObj = iocpTcpClient.m_callBackObj;
             }
         }
-        /// <summary>
+        
         /// Start to receive packet from the server
-        /// </summary>
+        
         private void startReceive()
         {
             PacketTransporter transport = new PacketTransporter(PacketType.SIZE,m_recvSizePacket, 0, 4, this);
@@ -368,9 +368,9 @@ namespace EpServerEngine.cs
             
         }
 
-        /// <summary>
+        
         /// Receive callback function
-        /// </summary>
+        
         /// <param name="result">result</param>
         private static void onReceived(IAsyncResult result)
         {
@@ -432,9 +432,9 @@ namespace EpServerEngine.cs
             }
           }
 
-        /// <summary>
+        
         /// Send callback function
-        /// </summary>
+        
         /// <param name="result">result</param>
         private static void onSent(IAsyncResult result)
         {

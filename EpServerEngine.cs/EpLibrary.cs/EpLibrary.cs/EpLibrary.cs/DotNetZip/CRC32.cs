@@ -31,11 +31,11 @@ using Interop = System.Runtime.InteropServices;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     ///   Computes a CRC-32. The CRC-32 algorithm is parameterized - you
     ///   can set the polynomial and enable or disable bit
     ///   reversal. This can be used for GZIP, BZip2, or ZIP.
-    /// </summary>
+    
     /// <remarks>
     ///   This type is used internally by DotNetZip; it is generally not used
     ///   directly by applications wishing to create, read, or manipulate zip
@@ -49,9 +49,9 @@ namespace EpLibrary.cs
 #endif
     public class CRC32
     {
-        /// <summary>
+        
         ///   Indicates the total number of bytes applied to the CRC.
-        /// </summary>
+        
         public Int64 TotalBytesRead
         {
             get
@@ -60,9 +60,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Indicates the current CRC for all blocks slurped in.
-        /// </summary>
+        
         public Int32 Crc32Result
         {
             get
@@ -71,9 +71,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Returns the CRC32 for the specified stream.
-        /// </summary>
+        
         /// <param name="input">The stream over which to calculate the CRC32</param>
         /// <returns>the CRC32 calculation</returns>
         public Int32 GetCrc32(System.IO.Stream input)
@@ -81,10 +81,10 @@ namespace EpLibrary.cs
             return GetCrc32AndCopy(input, null);
         }
 
-        /// <summary>
+        
         /// Returns the CRC32 for the specified stream, and writes the input into the
         /// output stream.
-        /// </summary>
+        
         /// <param name="input">The stream over which to calculate the CRC32</param>
         /// <param name="output">The stream into which to deflate the input</param>
         /// <returns>the CRC32 calculation</returns>
@@ -115,10 +115,10 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Get the CRC32 for the given (word,byte) combo.  This is a
         ///   computation defined by PKzip for PKZIP 2.0 (weak) encryption.
-        /// </summary>
+        
         /// <param name="W">The word to start with.</param>
         /// <param name="B">The byte to combine it with.</param>
         /// <returns>The CRC-ized result.</returns>
@@ -133,10 +133,10 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Update the value for the running CRC32 using the given block of bytes.
         /// This is useful when using the CRC32() class in a Stream.
-        /// </summary>
+        
         /// <param name="block">block of bytes to slurp</param>
         /// <param name="offset">starting point in the block</param>
         /// <param name="count">how many bytes within the block to slurp</param>
@@ -165,9 +165,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Process one byte in the CRC.
-        /// </summary>
+        
         /// <param name = "b">the byte to include into the CRC .  </param>
         public void UpdateCRC(byte b)
         {
@@ -183,9 +183,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   Process a run of N identical bytes into the CRC.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     This method serves as an optimization for updating the CRC when a
@@ -321,9 +321,9 @@ namespace EpLibrary.cs
 
 
 
-        /// <summary>
+        
         ///   Combines the given CRC32 value with the current running total.
-        /// </summary>
+        
         /// <remarks>
         ///   This is useful when using a divide-and-conquer approach to
         ///   calculating a CRC.  Multiple threads can each calculate a
@@ -391,18 +391,18 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Create an instance of the CRC32 class using the default settings: no
         ///   bit reversal, and a polynomial of 0xEDB88320.
-        /// </summary>
+        
         public CRC32() : this(false)
         {
         }
 
-        /// <summary>
+        
         ///   Create an instance of the CRC32 class, specifying whether to reverse
         ///   data bits or not.
-        /// </summary>
+        
         /// <param name='reverseBits'>
         ///   specify true if the instance should reverse data bits.
         /// </param>
@@ -421,10 +421,10 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Create an instance of the CRC32 class, specifying the polynomial and
         ///   whether to reverse data bits or not.
-        /// </summary>
+        
         /// <param name='polynomial'>
         ///   The polynomial to use for the CRC, expressed in the reversed (LSB)
         ///   format: the highest ordered bit in the polynomial value is the
@@ -453,9 +453,9 @@ namespace EpLibrary.cs
             this.GenerateLookupTable();
         }
 
-        /// <summary>
+        
         ///   Reset the CRC-32 class - clear the CRC "remainder register."
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     Use this when employing a single instance of this class to compute
@@ -477,10 +477,10 @@ namespace EpLibrary.cs
     }
 
 
-    /// <summary>
+    
     /// A Stream that calculates a CRC32 (a checksum) on all bytes read,
     /// or on all bytes written.
-    /// </summary>
+    
     ///
     /// <remarks>
     /// <para>
@@ -505,9 +505,9 @@ namespace EpLibrary.cs
         private Int64 _lengthLimit = -99;
         private bool _leaveOpen;
 
-        /// <summary>
+        
         /// The default constructor.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     Instances returned from this constructor will leave the underlying
@@ -521,10 +521,10 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         ///   The constructor allows the caller to specify how to handle the
         ///   underlying stream at close.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     The stream uses the default CRC32 algorithm, which implies a
@@ -539,10 +539,10 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         ///   A constructor allowing the specification of the length of the stream
         ///   to read.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     The stream uses the default CRC32 algorithm, which implies a
@@ -562,11 +562,11 @@ namespace EpLibrary.cs
                 throw new ArgumentException("length");
         }
 
-        /// <summary>
+        
         ///   A constructor allowing the specification of the length of the stream
         ///   to read, as well as whether to keep the underlying stream open upon
         ///   Close().
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     The stream uses the default CRC32 algorithm, which implies a
@@ -584,11 +584,11 @@ namespace EpLibrary.cs
                 throw new ArgumentException("length");
         }
 
-        /// <summary>
+        
         ///   A constructor allowing the specification of the length of the stream
         ///   to read, as well as whether to keep the underlying stream open upon
         ///   Close(), and the CRC32 instance to use.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     The stream uses the specified CRC32 instance, which allows the
@@ -625,9 +625,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Gets the total number of bytes run through the CRC32 calculator.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///   This is either the total number of bytes read, or the total number of
@@ -638,9 +638,9 @@ namespace EpLibrary.cs
             get { return _Crc32.TotalBytesRead; }
         }
 
-        /// <summary>
+        
         ///   Provides the current CRC for all blocks slurped in.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     The running total of the CRC is kept as data is written or read
@@ -653,10 +653,10 @@ namespace EpLibrary.cs
             get { return _Crc32.Crc32Result; }
         }
 
-        /// <summary>
+        
         ///   Indicates whether the underlying stream will be left open when the
         ///   <c>CrcCalculatorStream</c> is Closed.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     Set this at any point before calling <see cref="Close()"/>.
@@ -668,9 +668,9 @@ namespace EpLibrary.cs
             set { _leaveOpen = value; }
         }
 
-        /// <summary>
+        
         /// Read from the stream
-        /// </summary>
+        
         /// <param name="buffer">the buffer to read</param>
         /// <param name="offset">the offset at which to start</param>
         /// <param name="count">the number of bytes to read</param>
@@ -698,9 +698,9 @@ namespace EpLibrary.cs
             return n;
         }
 
-        /// <summary>
+        
         /// Write to the stream.
-        /// </summary>
+        
         /// <param name="buffer">the buffer from which to write</param>
         /// <param name="offset">the offset at which to start writing</param>
         /// <param name="count">the number of bytes to write</param>
@@ -710,17 +710,17 @@ namespace EpLibrary.cs
             _innerStream.Write(buffer, offset, count);
         }
 
-        /// <summary>
+        
         /// Indicates whether the stream supports reading.
-        /// </summary>
+        
         public override bool CanRead
         {
             get { return _innerStream.CanRead; }
         }
 
-        /// <summary>
+        
         ///   Indicates whether the stream supports seeking.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     Always returns false.
@@ -731,25 +731,25 @@ namespace EpLibrary.cs
             get { return false; }
         }
 
-        /// <summary>
+        
         /// Indicates whether the stream supports writing.
-        /// </summary>
+        
         public override bool CanWrite
         {
             get { return _innerStream.CanWrite; }
         }
 
-        /// <summary>
+        
         /// Flush the stream.
-        /// </summary>
+        
         public override void Flush()
         {
             _innerStream.Flush();
         }
 
-        /// <summary>
+        
         ///   Returns the length of the underlying stream.
-        /// </summary>
+        
         public override long Length
         {
             get
@@ -760,21 +760,21 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   The getter for this property returns the total bytes read.
         ///   If you use the setter, it will throw
         /// <see cref="NotSupportedException"/>.
-        /// </summary>
+        
         public override long Position
         {
             get { return _Crc32.TotalBytesRead; }
             set { throw new NotSupportedException(); }
         }
 
-        /// <summary>
+        
         /// Seeking is not supported on this stream. This method always throws
         /// <see cref="NotSupportedException"/>
-        /// </summary>
+        
         /// <param name="offset">N/A</param>
         /// <param name="origin">N/A</param>
         /// <returns>N/A</returns>
@@ -783,10 +783,10 @@ namespace EpLibrary.cs
             throw new NotSupportedException();
         }
 
-        /// <summary>
+        
         /// This method always throws
         /// <see cref="NotSupportedException"/>
-        /// </summary>
+        
         /// <param name="value">N/A</param>
         public override void SetLength(long value)
         {
@@ -799,9 +799,9 @@ namespace EpLibrary.cs
             Close();
         }
 
-        /// <summary>
+        
         /// Closes the stream.
-        /// </summary>
+        
         public override void Close()
         {
             base.Close();

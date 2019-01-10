@@ -44,14 +44,14 @@ using System.Management;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// Utility Class
-    /// </summary>
+    
     public class Util
     {
-        /// <summary>
+        
         /// Return number of cores during runtime.
-        /// </summary>
+        
         /// <returns>number of cores</returns>
         public static int GetNumberOfCores()
         {

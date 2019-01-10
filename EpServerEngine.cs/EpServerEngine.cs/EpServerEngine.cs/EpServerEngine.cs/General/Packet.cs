@@ -44,35 +44,14 @@ using System.Diagnostics;
 
 namespace EpServerEngine.cs
 {
-    /// <summary>
-    /// Packet class
-    /// </summary>
     public sealed class Packet
     {
 
-        /// <summary>
-        /// packet
-        /// </summary>
         private byte[] m_packet;
-        /// <summary>
-        /// packet byte size
-        /// </summary>
         private int m_packetSize;
-        /// <summary>
-        /// flag whether memory is allocated in this object or not
-        /// </summary>
         private bool m_isAllocated;
-        /// <summary>
-        /// lock
-        /// </summary>
         private Object m_packetLock = new Object();
 
-        /// <summary>
-        /// Default constructor
-        /// </summary>
-        /// <param name="packet">packet</param>
-        /// <param name="byteSize">packet size in byte</param>
-        /// <param name="shouldAllocate">flag whether to allocate memory or not</param>
         public Packet(byte[] packet = null, int byteSize = 0, bool shouldAllocate = true)
         {
             m_packet = null;
@@ -102,10 +81,6 @@ namespace EpServerEngine.cs
             }
         }
 
-        /// <summary>
-        /// Default copy constructor
-        /// </summary>
-        /// <param name="b">the object to copy from</param>
         public Packet(Packet b)
         {
 
@@ -131,19 +106,11 @@ namespace EpServerEngine.cs
 	        
         }
 
-        /// <summary>
-        /// Return the size of packet in byte
-        /// </summary>
-        /// <returns>the size of packet in byte</returns>
         public int GetPacketByteSize()
         {
             return m_packetSize;
         }
 
-        /// <summary>
-        /// Return the size of packet allocated in byte
-        /// </summary>
-        /// <returns>the size of packet allocated in byte</returns>
         public int GetAllocatedByteSize()
         {
             if (m_packet != null)
@@ -153,27 +120,14 @@ namespace EpServerEngine.cs
             return 0;
         }
 
-        /// <summary>
-        /// Check the flag whether allocated memory or not
-        /// </summary>
-        /// <returns>true if allocated, otherwise false</returns>
         public bool IsAllocated()
 		{
 			return m_isAllocated;
 		}
-        /// <summary>
-        /// Return the actual packet
-        /// </summary>
-        /// <returns>the actual packet</returns>
         public byte[] GetPacket()
         {
             return m_packet;
         }
-        /// <summary>
-        /// Set the packet with given byte array
-        /// </summary>
-        /// <param name="packet">packet data</param>
-        /// <param name="packetByteSize">packet in byte size</param>
         public void SetPacket(byte[] packet, int packetByteSize)
         {
             lock (m_packetLock)
@@ -213,9 +167,6 @@ namespace EpServerEngine.cs
             }
         }
 
-        /// <summary>
-        /// Reset the packet
-        /// </summary>
         private void resetPacket()
         {
             m_packet = null;

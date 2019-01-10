@@ -94,25 +94,23 @@ using Interop=System.Runtime.InteropServices;
 namespace EpLibrary.cs
 {
 
-    /// <summary>
+    
     /// Describes how to flush the current deflate operation.
-    /// </summary>
+    
     /// <remarks>
     /// The different FlushType values are useful when using a Deflate in a streaming application.
     /// </remarks>
     public enum FlushType
     {
-        /// <summary>No flush at all.</summary>
         None = 0,
 
-        /// <summary>Closes the current block, but doesn't flush it to
         /// the output. Used internally only in hypothetical
         /// scenarios.  This was supposed to be removed by Zlib, but it is
         /// still in use in some edge cases.
-        /// </summary>
+        
         Partial,
 
-        /// <summary>
+        
         /// Use this during compression to specify that all pending output should be
         /// flushed to the output buffer and the output should be aligned on a byte
         /// boundary.  You might use this in a streaming communication scenario, so that
@@ -120,163 +118,162 @@ namespace EpLibrary.cs
         /// with a ZlibCodec, <c>AvailableBytesIn</c> will be zero after the call if
         /// enough output space has been provided before the call.  Flushing will
         /// degrade compression and so it should be used only when necessary.
-        /// </summary>
+        
         Sync,
 
-        /// <summary>
+        
         /// Use this during compression to specify that all output should be flushed, as
         /// with <c>FlushType.Sync</c>, but also, the compression state should be reset
         /// so that decompression can restart from this point if previous compressed
         /// data has been damaged or if random access is desired.  Using
         /// <c>FlushType.Full</c> too often can significantly degrade the compression.
-        /// </summary>
+        
         Full,
 
-        /// <summary>Signals the end of the compression/decompression stream.</summary>
         Finish,
     }
 
 
-    /// <summary>
+    
     /// The compression level to be used when using a DeflateStream or ZlibStream with CompressionMode.Compress.
-    /// </summary>
+    
     public enum CompressionLevel
     {
-        /// <summary>
+        
         /// None means that the data will be simply stored, with no change at all.
         /// If you are producing ZIPs for use on Mac OSX, be aware that archives produced with CompressionLevel.None
         /// cannot be opened with the default zip reader. Use a different CompressionLevel.
-        /// </summary>
+        
         None= 0,
-        /// <summary>
+        
         /// Same as None.
-        /// </summary>
+        
         Level0 = 0,
 
-        /// <summary>
+        
         /// The fastest but least effective compression.
-        /// </summary>
+        
         BestSpeed = 1,
 
-        /// <summary>
+        
         /// A synonym for BestSpeed.
-        /// </summary>
+        
         Level1 = 1,
 
-        /// <summary>
+        
         /// A little slower, but better, than level 1.
-        /// </summary>
+        
         Level2 = 2,
 
-        /// <summary>
+        
         /// A little slower, but better, than level 2.
-        /// </summary>
+        
         Level3 = 3,
 
-        /// <summary>
+        
         /// A little slower, but better, than level 3.
-        /// </summary>
+        
         Level4 = 4,
 
-        /// <summary>
+        
         /// A little slower than level 4, but with better compression.
-        /// </summary>
+        
         Level5 = 5,
 
-        /// <summary>
+        
         /// The default compression level, with a good balance of speed and compression efficiency.
-        /// </summary>
+        
         Default = 6,
-        /// <summary>
+        
         /// A synonym for Default.
-        /// </summary>
+        
         Level6 = 6,
 
-        /// <summary>
+        
         /// Pretty good compression!
-        /// </summary>
+        
         Level7 = 7,
 
-        /// <summary>
+        
         ///  Better compression than Level7!
-        /// </summary>
+        
         Level8 = 8,
 
-        /// <summary>
+        
         /// The "best" compression, where best means greatest reduction in size of the input data stream.
         /// This is also the slowest compression.
-        /// </summary>
+        
         BestCompression = 9,
 
-        /// <summary>
+        
         /// A synonym for BestCompression.
-        /// </summary>
+        
         Level9 = 9,
     }
 
-    /// <summary>
+    
     /// Describes options for how the compression algorithm is executed.  Different strategies
     /// work better on different sorts of data.  The strategy parameter can affect the compression
     /// ratio and the speed of compression but not the correctness of the compresssion.
-    /// </summary>
+    
     public enum CompressionStrategy
     {
-        /// <summary>
+        
         /// The default strategy is probably the best for normal data.
-        /// </summary>
+        
         Default = 0,
 
-        /// <summary>
+        
         /// The <c>Filtered</c> strategy is intended to be used most effectively with data produced by a
         /// filter or predictor.  By this definition, filtered data consists mostly of small
         /// values with a somewhat random distribution.  In this case, the compression algorithm
         /// is tuned to compress them better.  The effect of <c>Filtered</c> is to force more Huffman
         /// coding and less string matching; it is a half-step between <c>Default</c> and <c>HuffmanOnly</c>.
-        /// </summary>
+        
         Filtered = 1,
 
-        /// <summary>
+        
         /// Using <c>HuffmanOnly</c> will force the compressor to do Huffman encoding only, with no
         /// string matching.
-        /// </summary>
+        
         HuffmanOnly = 2,
     }
 
 
-    /// <summary>
+    
     /// An enum to specify the direction of transcoding - whether to compress or decompress.
-    /// </summary>
+    
     public enum CompressionMode
     {
-        /// <summary>
+        
         /// Used to specify that the stream should compress the data.
-        /// </summary>
+        
         Compress= 0,
-        /// <summary>
+        
         /// Used to specify that the stream should decompress the data.
-        /// </summary>
+        
         Decompress = 1,
     }
 
 
-    /// <summary>
+    
     /// A general purpose exception class for exceptions in the Zlib library.
-    /// </summary>
+    
     [Interop.GuidAttribute("ebc25cf6-9120-4283-b972-0e5520d0000E")]
     public class ZlibException : System.Exception
     {
-        /// <summary>
+        
         /// The ZlibException class captures exception information generated
         /// by the Zlib library.
-        /// </summary>
+        
         public ZlibException()
             : base()
         {
         }
 
-        /// <summary>
+        
         /// This ctor collects a message attached to the exception.
-        /// </summary>
+        
         /// <param name="s">the message for the exception.</param>
         public ZlibException(System.String s)
             : base(s)
@@ -287,9 +284,9 @@ namespace EpLibrary.cs
 
     internal class SharedUtils
     {
-        /// <summary>
+        
         /// Performs an unsigned bitwise right shift with the specified number
-        /// </summary>
+        
         /// <param name="number">Number to operate on</param>
         /// <param name="bits">Ammount of bits to shift</param>
         /// <returns>The resulting number from the shift operation</returns>
@@ -299,9 +296,9 @@ namespace EpLibrary.cs
         }
 
 #if NOT
-        /// <summary>
+        
         /// Performs an unsigned bitwise right shift with the specified number
-        /// </summary>
+        
         /// <param name="number">Number to operate on</param>
         /// <param name="bits">Ammount of bits to shift</param>
         /// <returns>The resulting number from the shift operation</returns>
@@ -311,10 +308,10 @@ namespace EpLibrary.cs
         }
 #endif
 
-        /// <summary>
+        
         ///   Reads a number of characters from the current source TextReader and writes
         ///   the data to the target array at the specified index.
-        /// </summary>
+        
         ///
         /// <param name="sourceTextReader">The source TextReader to read from</param>
         /// <param name="target">Contains the array of characteres read from the source TextReader.</param>
@@ -454,9 +451,9 @@ namespace EpLibrary.cs
 
 
 
-    /// <summary>
+    
     /// Computes an Adler-32 checksum.
-    /// </summary>
+    
     /// <remarks>
     /// The Adler checksum is similar to a CRC checksum, but faster to compute, though less
     /// reliable.  It is used in producing RFC1950 compressed streams.  The Adler checksum
@@ -476,9 +473,9 @@ namespace EpLibrary.cs
 #pragma warning disable 3001
 #pragma warning disable 3002
 
-        /// <summary>
+        
         ///   Calculates the Adler32 checksum.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     This is used within ZLIB.  You probably don't need to use this directly.

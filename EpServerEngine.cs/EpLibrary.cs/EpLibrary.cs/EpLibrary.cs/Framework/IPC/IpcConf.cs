@@ -42,86 +42,86 @@ using System.Text;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// Server start status
-    /// </summary>
+    
     public enum IpcStartStatus
     {
-        /// <summary>
+        
         /// Success
-        /// </summary>
+        
         SUCCESS=0,
-        /// <summary>
+        
         /// Failed to create pipe
-        /// </summary>
+        
         FAIL_PIPE_CREATE_FAILED,
     }
-	/// <summary>
+	
     /// Connect Status
-	/// </summary>
+	
     public enum IpcConnectStatus
     {
-		/// <summary>
+		
         /// Success
-		/// </summary>
+		
 		SUCCESS=0,
-        /// <summary>
+        
         /// Failed to wait for connection
-        /// </summary>
+        
         FAIL_WAIT_FOR_CONNECTION_FAILED,
-		/// <summary>
+		
         /// Pipe open failed
-		/// </summary>
+		
 		FAIL_PIPE_OPEN_FAILED,
-		/// <summary>
+		
         /// ReadMode Set failed
-		/// </summary>
+		
 		FAIL_SET_READ_MODE_FAILED,
-		/// <summary>
+		
         /// Read failed
-		/// </summary>
+		
 		FAIL_READ_FAILED,
-		/// <summary>
+		
         /// Timed Out
-		/// </summary>
+		
 		FAIL_TIME_OUT,
 	}
 
 
-	/// <summary>
+	
     /// Write Status
-	/// </summary>
+	
 	public enum IpcWriteStatus{
-		/// <summary>
+		
         /// Success
-		/// </summary>
+		
 		SUCCESS=0,
-		/// <summary>
+		
         /// Send failed
-		/// </summary>
+		
 		FAIL_WRITE_FAILED,
 	}
 
-    /// <summary>
+    
     /// Pipe write element
-    /// </summary>
+    
 	public class PipeWriteElem{
-        /// <summary>
+        
         /// offset of start of data
-        /// </summary>
+        
         public int m_offset;
-        /// <summary>
+        
         /// /// Byte size of the data
-        /// </summary>
+        
         public int m_dataSize;
-        /// <summary>
+        
         /// Data buffer
-        /// </summary>
+        
         public byte[] m_data;
 
-        /// <summary>
+        
         /// Default constructor
-        /// </summary>
+        
 		public PipeWriteElem()
         {
             m_dataSize=0;
@@ -129,9 +129,9 @@ namespace EpLibrary.cs
             m_data=null;
         }
 
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
         /// <param name="data">the byte size of the data</param>
         /// <param name="offset">offset of the byte to start write</param>
         /// <param name="dataSize">byte size of the data to write</param>
@@ -143,22 +143,22 @@ namespace EpLibrary.cs
         }
 
 	}
-    /// <summary>
+    
     /// IPC configuration class
-    /// </summary>
+    
     public class IpcConf
     {
-        /// <summary>
+        
         /// Unlimited instance of pipe
-        /// </summary>
+        
         public const int DEFAULT_PIPE_INSTANCES = 255;
-        /// <summary>
+        
         /// Default write buffer size
-        /// </summary>
+        
         public const int DEFAULT_WRITE_BUF_SIZE = 4096;
-        /// <summary>
+        
         /// Default read buffer size
-        /// </summary>
+        
         public const int DEFAULT_READ_BUF_SIZE = 4096;
     }
 }

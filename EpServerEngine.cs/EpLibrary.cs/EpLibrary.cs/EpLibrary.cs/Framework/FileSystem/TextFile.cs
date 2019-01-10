@@ -43,28 +43,28 @@ using System.Text;
 using System.IO;
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// A class for Text File.
-    /// </summary>
+    
     public sealed class TextFile:BaseTextFile
     {
-        /// <summary>
+        
         /// the text
-        /// </summary>
+        
         private String m_text;
 
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
         /// <param name="encoding">the encoding type for this file</param>
 		public TextFile(Encoding encoding=null):base(encoding)
         {
             m_text="";
         }
 
-        /// <summary>
+        
         /// Default Copy Constructor
-        /// </summary>
+        
         /// <param name="b">the object to copy from</param>
 		public TextFile(TextFile b):base(b)
         {
@@ -75,9 +75,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Set the text with the given text
-        /// </summary>
+        
         /// <param name="val">the text value</param>
 		void SetText(String val)
         {
@@ -88,9 +88,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Get the value of the text
-        /// </summary>
+        
         /// <returns>text value holding</returns>
 		String GetText()
         {
@@ -101,9 +101,9 @@ namespace EpLibrary.cs
         }
 
 	
-        /// <summary>
+        
         /// Clear the text
-        /// </summary>
+        
 		void Clear()
         {
             lock(m_baseTextLock)
@@ -113,17 +113,17 @@ namespace EpLibrary.cs
         }
 
 	
-        /// <summary>
+        
         /// Loop Function that writes to the file.
-        /// </summary>
+        
 		protected override void writeLoop()
         {
             writeToFile(m_text);
         }
 
-        /// <summary>
+        
         /// Actual Load Function that loads values from the file.
-        /// </summary>
+        
         /// <param name="stream">the stream from the file</param>
         protected override void loadFromFile(StreamReader stream)
         {

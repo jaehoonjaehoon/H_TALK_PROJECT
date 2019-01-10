@@ -44,45 +44,45 @@ using System.Security.Cryptography;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// Crypt type
-    /// </summary>
+    
     public enum CryptType
     {
-        /// <summary>
+        
         /// Encryption
-        /// </summary>
+        
         Encrypt,
-        /// <summary>
+        
         /// Decryption
-        /// </summary>
+        
         Decrypt
     }
 
-    /// <summary>
+    
     /// Crypt algorithm type
-    /// </summary>
+    
     public enum CryptAlgo
     {
-        /// <summary>
+        
         /// Rijndael Algorithm
-        /// </summary>
+        
         Rijndael,
-        /// <summary>
+        
         ///  AES Algorithm
-        /// </summary>
+        
         Aes,
 
     }
 
-    /// <summary>
+    
     /// This is a class for Crypt Class
-    /// </summary>
+    
     public class Crypt
     {
-                /// <summary>
+                
         /// Encrypt/Decypt the given cryptData string with the given password
-        /// </summary>
+        
         /// <param name="cryptData">string data to encrypt</param>
         /// <param name="cryptPwd">password string</param>
         /// <param name="cryptType">crypt type</param>
@@ -102,9 +102,9 @@ namespace EpLibrary.cs
             return retString;
         }
 
-        /// <summary>
+        
         /// Encrypt/Decypt the given cryptData string with the given password
-        /// </summary>
+        
         /// <param name="cryptData">string data to encrypt</param>
         /// <param name="cryptPwd">password string</param>
         /// <param name="cryptType">crypt type</param>
@@ -125,9 +125,9 @@ namespace EpLibrary.cs
             return retString;
         }
 
-        /// <summary>
+        
         /// Encrypt/Decypt the given cryptData with the given password
-        /// </summary>
+        
         /// <param name="cryptData">data to crypt</param>
         /// <param name="cryptPwd">password string</param>
         /// <param name="cryptType">crypt type</param>
@@ -147,9 +147,9 @@ namespace EpLibrary.cs
             return retBytes;
         }
 
-        /// <summary>
+        
         /// Encrypt/Decypt the given cryptData with the given password
-        /// </summary>
+        
         /// <param name="cryptData">data to crypt</param>
         /// <param name="cryptPwd">password string</param>
         /// <param name="keySalt">salt string</param>
@@ -170,9 +170,9 @@ namespace EpLibrary.cs
             }
             return retBytes;
         }
-        /// <summary>
+        
         /// Create random salt with given length
-        /// </summary>
+        
         /// <param name="length">length of salt bytes</param>
         /// <returns>randomly created salt</returns>
         public static byte[] CreateRandomSalt(int length)

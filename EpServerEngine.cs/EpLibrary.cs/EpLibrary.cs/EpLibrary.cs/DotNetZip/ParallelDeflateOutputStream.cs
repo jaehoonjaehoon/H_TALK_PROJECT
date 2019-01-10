@@ -60,10 +60,10 @@ namespace EpLibrary.cs
         }
     }
 
-    /// <summary>
+    
     ///   A class for compressing streams using the
     ///   Deflate algorithm with multiple threads.
-    /// </summary>
+    
     ///
     /// <remarks>
     /// <para>
@@ -148,9 +148,9 @@ namespace EpLibrary.cs
             TraceBits.EmitSkip |
             TraceBits.EmitBegin;
 
-        /// <summary>
+        
         /// Create a ParallelDeflateOutputStream.
-        /// </summary>
+        
         /// <remarks>
         ///
         /// <para>
@@ -224,9 +224,9 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         ///   Create a ParallelDeflateOutputStream using the specified CompressionLevel.
-        /// </summary>
+        
         /// <remarks>
         ///   See the <see cref="ParallelDeflateOutputStream(System.IO.Stream)"/>
         ///   constructor for example code.
@@ -238,10 +238,10 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         /// Create a ParallelDeflateOutputStream and specify whether to leave the captive stream open
         /// when the ParallelDeflateOutputStream is closed.
-        /// </summary>
+        
         /// <remarks>
         ///   See the <see cref="ParallelDeflateOutputStream(System.IO.Stream)"/>
         ///   constructor for example code.
@@ -255,10 +255,10 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         /// Create a ParallelDeflateOutputStream and specify whether to leave the captive stream open
         /// when the ParallelDeflateOutputStream is closed.
-        /// </summary>
+        
         /// <remarks>
         ///   See the <see cref="ParallelDeflateOutputStream(System.IO.Stream)"/>
         ///   constructor for example code.
@@ -273,12 +273,12 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         /// Create a ParallelDeflateOutputStream using the specified
         /// CompressionLevel and CompressionStrategy, and specifying whether to
         /// leave the captive stream open when the ParallelDeflateOutputStream is
         /// closed.
-        /// </summary>
+        
         /// <remarks>
         ///   See the <see cref="ParallelDeflateOutputStream(System.IO.Stream)"/>
         ///   constructor for example code.
@@ -307,9 +307,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   The ZLIB strategy to be used during compression.
-        /// </summary>
+        
         ///
         public CompressionStrategy Strategy
         {
@@ -317,9 +317,9 @@ namespace EpLibrary.cs
             private set;
         }
 
-        /// <summary>
+        
         ///   The maximum number of buffer pairs to use.
-        /// </summary>
+        
         ///
         /// <remarks>
         /// <para>
@@ -403,9 +403,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   The size of the buffers used by the compressor threads.
-        /// </summary>
+        
         /// <remarks>
         ///
         /// <para>
@@ -455,18 +455,18 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// The CRC32 for the data that was written out, prior to compression.
-        /// </summary>
+        
         /// <remarks>
         /// This value is meaningful only after a call to Close().
         /// </remarks>
         public int Crc32 { get { return _Crc32; } }
 
 
-        /// <summary>
+        
         /// The total number of uncompressed bytes processed by the ParallelDeflateOutputStream.
-        /// </summary>
+        
         /// <remarks>
         /// This value is meaningful only after a call to Close().
         /// </remarks>
@@ -497,9 +497,9 @@ namespace EpLibrary.cs
 
 
 
-        /// <summary>
+        
         ///   Write data to the stream.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///
@@ -711,9 +711,9 @@ namespace EpLibrary.cs
 
 
 
-        /// <summary>
+        
         /// Flush the stream.
-        /// </summary>
+        
         public override void Flush()
         {
             if (_pendingException != null)
@@ -730,9 +730,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Close the stream.
-        /// </summary>
+        
         /// <remarks>
         /// You must call Close on the stream to guarantee that all of the data written in has
         /// been compressed, and the compressed data has been written out.
@@ -766,7 +766,6 @@ namespace EpLibrary.cs
 
         // workitem 10030 - implement a new Dispose method
 
-        /// <summary>Dispose the object</summary>
         /// <remarks>
         ///   <para>
         ///     Because ParallelDeflateOutputStream is IDisposable, the
@@ -787,7 +786,6 @@ namespace EpLibrary.cs
 
 
 
-        /// <summary>The Dispose method</summary>
         /// <param name="disposing">
         ///   indicates whether the Dispose method was invoked by user code.
         /// </param>
@@ -797,9 +795,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Resets the stream for use with another stream.
-        /// </summary>
+        
         /// <remarks>
         ///   Because the ParallelDeflateOutputStream is expensive to create, it
         ///   has been designed so that it can be recycled and re-used.  You have
@@ -1269,9 +1267,9 @@ namespace EpLibrary.cs
 
 
 
-        /// <summary>
+        
         /// Indicates whether the stream supports Seek operations.
-        /// </summary>
+        
         /// <remarks>
         /// Always returns false.
         /// </remarks>
@@ -1281,9 +1279,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Indicates whether the stream supports Read operations.
-        /// </summary>
+        
         /// <remarks>
         /// Always returns false.
         /// </remarks>
@@ -1292,9 +1290,9 @@ namespace EpLibrary.cs
             get {return false;}
         }
 
-        /// <summary>
+        
         /// Indicates whether the stream supports Write operations.
-        /// </summary>
+        
         /// <remarks>
         /// Returns true if the provided stream is writable.
         /// </remarks>
@@ -1303,17 +1301,17 @@ namespace EpLibrary.cs
             get { return _outStream.CanWrite; }
         }
 
-        /// <summary>
+        
         /// Reading this property always throws a NotSupportedException.
-        /// </summary>
+        
         public override long Length
         {
             get { throw new NotSupportedException(); }
         }
 
-        /// <summary>
+        
         /// Returns the current position of the output stream.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     Because the output gets written by a background thread,
@@ -1327,9 +1325,9 @@ namespace EpLibrary.cs
             set { throw new NotSupportedException(); }
         }
 
-        /// <summary>
+        
         /// This method always throws a NotSupportedException.
-        /// </summary>
+        
         /// <param name="buffer">
         ///   The buffer into which data would be read, IF THIS METHOD
         ///   ACTUALLY DID ANYTHING.
@@ -1349,9 +1347,9 @@ namespace EpLibrary.cs
             throw new NotSupportedException();
         }
 
-        /// <summary>
+        
         /// This method always throws a NotSupportedException.
-        /// </summary>
+        
         /// <param name="offset">
         ///   The offset to seek to....
         ///   IF THIS METHOD ACTUALLY DID ANYTHING.
@@ -1366,9 +1364,9 @@ namespace EpLibrary.cs
             throw new NotSupportedException();
         }
 
-        /// <summary>
+        
         /// This method always throws a NotSupportedException.
-        /// </summary>
+        
         /// <param name="value">
         ///   The new value for the stream length....  IF
         ///   THIS METHOD ACTUALLY DID ANYTHING.

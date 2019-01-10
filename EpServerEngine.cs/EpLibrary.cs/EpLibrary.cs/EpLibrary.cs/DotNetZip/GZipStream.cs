@@ -32,9 +32,9 @@ using System.IO;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     ///   A class for compressing and decompressing GZIP streams.
-    /// </summary>
+    
     /// <remarks>
     ///
     /// <para>
@@ -121,9 +121,9 @@ namespace EpLibrary.cs
 
 
 
-        /// <summary>
+        
         ///   The comment on the GZIP stream.
-        /// </summary>
+        
         ///
         /// <remarks>
         /// <para>
@@ -154,9 +154,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   The FileName for the GZIP stream.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///
@@ -199,9 +199,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   The last modified time for the GZIP stream.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///   GZIP allows the storage of a last modified time with each GZIP entry.
@@ -211,9 +211,9 @@ namespace EpLibrary.cs
         /// </remarks>
         public DateTime? LastModified;
 
-        /// <summary>
+        
         /// The CRC on the GZIP stream.
-        /// </summary>
+        
         /// <remarks>
         /// This is used for internal error checking. You probably don't need to look at this property.
         /// </remarks>
@@ -228,9 +228,9 @@ namespace EpLibrary.cs
         int _Crc32;
 
 
-        /// <summary>
+        
         ///   Create a <c>GZipStream</c> using the specified <c>CompressionMode</c>.
-        /// </summary>
+        
         /// <remarks>
         ///
         /// <para>
@@ -347,10 +347,10 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         ///   Create a <c>GZipStream</c> using the specified <c>CompressionMode</c> and
         ///   the specified <c>CompressionLevel</c>.
-        /// </summary>
+        
         /// <remarks>
         ///
         /// <para>
@@ -412,11 +412,11 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         ///   Create a <c>GZipStream</c> using the specified <c>CompressionMode</c>, and
         ///   explicitly specify whether the stream should be left open after Deflation
         ///   or Inflation.
-        /// </summary>
+        
         ///
         /// <remarks>
         /// <para>
@@ -465,11 +465,11 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         ///   Create a <c>GZipStream</c> using the specified <c>CompressionMode</c> and the
         ///   specified <c>CompressionLevel</c>, and explicitly specify whether the
         ///   stream should be left open after Deflation or Inflation.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///
@@ -541,9 +541,9 @@ namespace EpLibrary.cs
 
         #region Zlib properties
 
-        /// <summary>
+        
         /// This property sets the flush behavior on the stream.
-        /// </summary>
+        
         virtual public FlushType FlushMode
         {
             get { return (this._baseStream._flushMode); }
@@ -553,9 +553,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   The size of the working buffer for the compression codec.
-        /// </summary>
+        
         ///
         /// <remarks>
         /// <para>
@@ -588,7 +588,6 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary> Returns the total number of bytes input so far.</summary>
         virtual public long TotalIn
         {
             get
@@ -597,7 +596,6 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary> Returns the total number of bytes output so far.</summary>
         virtual public long TotalOut
         {
             get
@@ -610,9 +608,9 @@ namespace EpLibrary.cs
 
         #region Stream methods
 
-        /// <summary>
+        
         ///   Dispose the stream.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     This may or may not result in a <c>Close()</c> call on the captive
@@ -654,9 +652,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Indicates whether the stream can be read.
-        /// </summary>
+        
         /// <remarks>
         /// The return value depends on whether the captive stream supports reading.
         /// </remarks>
@@ -669,9 +667,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Indicates whether the stream supports Seek operations.
-        /// </summary>
+        
         /// <remarks>
         /// Always returns false.
         /// </remarks>
@@ -681,9 +679,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Indicates whether the stream can be written.
-        /// </summary>
+        
         /// <remarks>
         /// The return value depends on whether the captive stream supports writing.
         /// </remarks>
@@ -696,26 +694,26 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Flush the stream.
-        /// </summary>
+        
         public override void Flush()
         {
             if (_disposed) throw new ObjectDisposedException("GZipStream");
             _baseStream.Flush();
         }
 
-        /// <summary>
+        
         /// Reading this property always throws a <see cref="NotImplementedException"/>.
-        /// </summary>
+        
         public override long Length
         {
             get { throw new NotImplementedException(); }
         }
 
-        /// <summary>
+        
         ///   The position of the stream pointer.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///   Setting this property always throws a <see
@@ -738,9 +736,9 @@ namespace EpLibrary.cs
             set { throw new NotImplementedException(); }
         }
 
-        /// <summary>
+        
         ///   Read and decompress data from the source stream.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///   With a <c>GZipStream</c>, decompression is done through reading.
@@ -788,9 +786,9 @@ namespace EpLibrary.cs
 
 
 
-        /// <summary>
+        
         ///   Calling this method always throws a <see cref="NotImplementedException"/>.
-        /// </summary>
+        
         /// <param name="offset">irrelevant; it will always throw!</param>
         /// <param name="origin">irrelevant; it will always throw!</param>
         /// <returns>irrelevant!</returns>
@@ -799,18 +797,18 @@ namespace EpLibrary.cs
             throw new NotImplementedException();
         }
 
-        /// <summary>
+        
         ///   Calling this method always throws a <see cref="NotImplementedException"/>.
-        /// </summary>
+        
         /// <param name="value">irrelevant; this method will always throw!</param>
         public override void SetLength(long value)
         {
             throw new NotImplementedException();
         }
 
-        /// <summary>
+        
         ///   Write data to the stream.
-        /// </summary>
+        
         ///
         /// <remarks>
         /// <para>
@@ -921,9 +919,9 @@ namespace EpLibrary.cs
 
 
 
-        /// <summary>
+        
         ///   Compress a string into a byte array using GZip.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///   Uncompress it with <see cref="GZipStream.UncompressString(byte[])"/>.
@@ -950,9 +948,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Compress a byte array into a new byte array using GZip.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///   Uncompress it with <see cref="GZipStream.UncompressBuffer(byte[])"/>.
@@ -979,9 +977,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Uncompress a GZip'ed byte array into a single string.
-        /// </summary>
+        
         ///
         /// <seealso cref="GZipStream.CompressString(String)"/>
         /// <seealso cref="GZipStream.UncompressBuffer(byte[])"/>
@@ -1001,9 +999,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Uncompress a GZip'ed byte array into a byte array.
-        /// </summary>
+        
         ///
         /// <seealso cref="GZipStream.CompressBuffer(byte[])"/>
         /// <seealso cref="GZipStream.UncompressString(byte[])"/>

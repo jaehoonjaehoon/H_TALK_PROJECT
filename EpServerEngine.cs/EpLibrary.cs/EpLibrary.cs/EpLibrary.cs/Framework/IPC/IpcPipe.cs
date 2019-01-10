@@ -48,32 +48,32 @@ using System.Diagnostics;
 namespace EpLibrary.cs
 {
 
-    /// <summary>
+    
     /// IPC Pipe Options
-    /// </summary>
+    
     public sealed class IpcPipeOps
     {
-        /// <summary>
+        
         /// Callback Object
-        /// </summary>
+        
         public IpcPipeCallbackInterface m_callBackObj;
-        /// <summary>
+        
         /// Name of the pipe
-        /// </summary>
+        
         public string m_pipeName;
 
-        /// <summary>
+        
         /// read byte size
-        /// </summary>
+        
         public int m_numOfReadBytes;
-        /// <summary>
+        
         /// write byte size
-        /// </summary>
+        
         public int m_numOfWriteBytes;
 
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
         /// <param name="pipeName">the name of the pipe</param>
         /// <param name="numOfReadyBytes">maximum read buffer size</param>
         /// <param name="numOfWriteBytes">maximum write buffer size</param>
@@ -86,9 +86,9 @@ namespace EpLibrary.cs
             m_numOfWriteBytes = numOfWriteBytes;
         }
 
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
         public IpcPipeOps()
         {
             m_callBackObj = null;
@@ -98,89 +98,89 @@ namespace EpLibrary.cs
 
         }
 
-        /// <summary>
+        
         /// Default IPC Pipe options
-        /// </summary>
+        
         public static IpcPipeOps defaultIpcPIpeOps;
     };
 
-    /// <summary>
+    
     /// Pipe Callback Interface
-    /// </summary>
+    
     public interface IpcPipeCallbackInterface
     {
-        /// <summary>
+        
         ///  When accepted client tries to make connection.
-        /// </summary>
+        
         /// <param name="pipe">the pipe</param>
         /// <param name="status">status of connect</param>
         /// <remarks>when this function calls, it is right before making connection,
         /// so user can configure the pipe before the connection is actually made.	</remarks>
         void OnNewConnection(IpcInterface pipe, IpcConnectStatus status);
 
-        /// <summary>
+        
         /// Received the data from the client.
-        /// </summary>
+        
         /// <param name="pipe">the pipe which received the packet</param>
         /// <param name="receivedData">the received data</param>
         /// <param name="receivedDataByteSize">the received data byte size</param>
         void OnReadComplete(IpcInterface pipe, byte[] receivedData, int receivedDataByteSize);
 
-        /// <summary>
+        
         /// Received the packet from the client.
-        /// </summary>
+        
         /// <param name="pipe">the pipe which wrote the packet</param>
         /// <param name="status">the status of write</param>
         void OnWriteComplete(IpcInterface pipe, IpcWriteStatus status);
 
-        /// <summary>
+        
         ///  The pipe is disconnected.
-        /// </summary>
+        
         /// <param name="pipe">the pipe, disconnected.</param>
         void OnDisconnected(IpcInterface pipe);
     };
 
-    /// <summary>
+    
     /// IPC Pipe class
-    /// </summary>
+    
     public sealed class IpcPipe:IpcInterface
     {
 
-        /// <summary>
+        
         /// Pipe handle
-        /// </summary>
+        
         private NamedPipeServerStream m_pipeHandle;
-        /// <summary>
+        
         /// flag whether the pipe is connected
-        /// </summary>
+        
         private bool m_connected;
-        /// <summary>
+        
         /// Pipe options
-        /// </summary>
+        
         private IpcPipeOps m_options;
 
-        /// <summary>
+        
         /// Pipe security
-        /// </summary>
+        
         private readonly PipeSecurity m_ps;
 
-        /// <summary>
+        
         /// Write buffer queue
-        /// </summary>
+        
         Queue<PipeWriteElem> m_writeQueue=new Queue<PipeWriteElem>();
-        /// <summary>
+        
         /// Read buffer
-        /// </summary>
+        
         byte[] m_readBuffer;
 
-        /// <summary>
+        
         /// General lock object
-        /// </summary>
+        
         Object m_generalLock = new Object();
 
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
         /// <param name="options">the pipe options</param>
         public IpcPipe(IpcPipeOps options)
         {
@@ -210,17 +210,17 @@ namespace EpLibrary.cs
             );
         }
 
-        /// <summary>
+        
         /// Default Destructor
-        /// </summary>
+        
 		~IpcPipe()
         {
             KillConnection();
         }
 
-        /// <summary>
+        
         /// Create the pipe
-        /// </summary>
+        
         /// <returns> true if successfully created otherwise false</returns>
 		public bool Create()
         {
@@ -247,18 +247,18 @@ namespace EpLibrary.cs
              
         }
 
-        /// <summary>
+        
         /// Kill current connection and wait for other connection
-        /// </summary>
+        
         public void Reconnect()
         {
             KillConnection();
             Create();
         }
 
-        /// <summary>
+        
         /// Write data to the pipe
-        /// </summary>
+        
         /// <param name="data">the data to write</param>
         /// <param name="offset">offset to start write from given data</param>
         /// <param name="dataByteSize">byte size of the data to write</param>
@@ -290,18 +290,18 @@ namespace EpLibrary.cs
 
         }
 
-        /// <summary>
+        
         /// Check if the connection is alive
-        /// </summary>
+        
         /// <returns>true if the connection is alive otherwise false</returns>
 		public bool IsConnectionAlive()
         {
             return m_connected;
         }
 
-        /// <summary>
+        
         /// Kill the connection
-        /// </summary>
+        
 		public void KillConnection()
         {
             lock (m_generalLock)
@@ -326,9 +326,9 @@ namespace EpLibrary.cs
             t.Start();
         }
 
-        /// <summary>
+        
         /// Handle on client connected
-        /// </summary>
+        
         /// <param name="result">AsyncResult</param>
         private void OnClientConnected(IAsyncResult result)
         {
@@ -361,9 +361,9 @@ namespace EpLibrary.cs
             
         }
 		
-        /// <summary>
+        
         /// Handle when read is completed
-        /// </summary>
+        
         /// <param name="result">AsyncResult</param>
 		private void OnReadComplete(IAsyncResult result)
         {
@@ -395,9 +395,9 @@ namespace EpLibrary.cs
         
         }
 
-        /// <summary>
+        
         ///Handles when Write is completed
-        /// </summary>
+        
         /// <param name="result">AsyncResult</param>
 		private void OnWriteComplete(IAsyncResult result)
         {

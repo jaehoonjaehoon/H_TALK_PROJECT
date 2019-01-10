@@ -45,14 +45,14 @@ using System.Security.Cryptography;
 namespace EpLibrary.cs
 {
 
-    /// <summary>
+    
     /// This is a class for AES Crypt Class
-    /// </summary>
+    
     public class AesCrypt
     {
-        /// <summary>
+        
         /// Encrypt/Decypt the given cryptData string with the given password
-        /// </summary>
+        
         /// <param name="cryptData">string data to encrypt</param>
         /// <param name="cryptPwd">password string</param>
         /// <param name="cryptType">crypt type</param>
@@ -62,9 +62,9 @@ namespace EpLibrary.cs
             return GetCrypt(cryptData, cryptPwd, null, cryptType);
         }
 
-        /// <summary>
+        
         /// Encrypt/Decypt the given cryptData string with the given password
-        /// </summary>
+        
         /// <param name="cryptData">string data to encrypt</param>
         /// <param name="cryptPwd">password string</param>
         /// <param name="cryptType">crypt type</param>
@@ -101,9 +101,9 @@ namespace EpLibrary.cs
             return null;
         }
 
-        /// <summary>
+        
         /// Encrypt/Decypt the given cryptData with the given password
-        /// </summary>
+        
         /// <param name="cryptData">data to crypt</param>
         /// <param name="cryptPwd">password string</param>
         /// <param name="cryptType">crypt type</param>
@@ -113,9 +113,9 @@ namespace EpLibrary.cs
             return GetCrypt(cryptData, cryptPwd, null, cryptType);
         }
 
-        /// <summary>
+        
         /// Encrypt/Decypt the given cryptData with the given password
-        /// </summary>
+        
         /// <param name="cryptData">data to crypt</param>
         /// <param name="cryptPwd">password string</param>
         /// <param name="keySalt">salt string</param>

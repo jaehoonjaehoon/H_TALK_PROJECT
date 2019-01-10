@@ -43,27 +43,27 @@ using System.Text;
 using System.IO;
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// A class for Properties File.
-    /// </summary>
+    
     public sealed class PropertiesFile:BaseTextFile
     {
-        /// <summary>
+        
         /// The list of the properties
-        /// </summary>
+        
         private Dictionary<String, String> m_propertyList=new Dictionary<string,string>(StringComparer.OrdinalIgnoreCase);
 
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
         /// <param name="encoding">the encoding type for this file</param>
 		public PropertiesFile(Encoding encoding=null):base(encoding)
         {
         }
 
-        /// <summary>
+        
         /// Default Copy Constructor
-        /// </summary>
+        
         /// <param name="b">the object to copy from</param>
         public PropertiesFile(PropertiesFile b)
             : base(b)
@@ -76,9 +76,9 @@ namespace EpLibrary.cs
 		
 
 
-        /// <summary>
+        
         /// Set the property with the given key with the value given
-        /// </summary>
+        
         /// <param name="key">the key of the property to change the value</param>
         /// <param name="val">the value to change the property</param>
         /// <returns></returns>
@@ -94,9 +94,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Get the value of the property with the given key
-        /// </summary>
+        
         /// <param name="key">the key of the property to get the value</param>
         /// <param name="retVal">the value of the property of given key</param>
         /// <returns>true if found, otherwise false</returns>
@@ -116,9 +116,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Get the value of the property with the given key
-        /// </summary>
+        
         /// <param name="key">the key of the property to get the value</param>
         /// <returns>the value of the property of given key</returns>
         /// <remarks>raises exception when key does not exists</remarks>
@@ -132,9 +132,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Add new property with the given key and value
-        /// </summary>
+        
         /// <param name="key">the key of the property to add</param>
         /// <param name="val">the value of the new property</param>
         /// <returns>true if successfully added, otherwise false</returns>
@@ -152,9 +152,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Remove the property with the given key
-        /// </summary>
+        
         /// <param name="key">the key of the property to remove</param>
         /// <returns>true if successfully removed, otherwise false</returns>
         public bool RemoveProperty(String key)
@@ -167,9 +167,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Clear the list of the properties
-        /// </summary>
+        
         public void Clear()
         {
             lock(m_baseTextLock)
@@ -178,9 +178,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// If given key exists, then return the value, and if given key does not exist, then create key and return the reference to empty value.
-        /// </summary>
+        
         /// <param name="key">the key of the property to find/create</param>
         /// <returns>value of the given key.</returns>
 		public  String this[String key]
@@ -208,9 +208,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Loop Function that writes to the file.
-        /// </summary>
+        
 		protected override void writeLoop()
         {
             StringBuilder toFileString=new StringBuilder();
@@ -224,9 +224,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Actual Load Function that loads values from the file.
-        /// </summary>
+        
         /// <param name="stream">the stream from the file</param>
 		protected override void loadFromFile(StreamReader stream)
         {
@@ -252,9 +252,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Parse the key and value from the line buffer
-        /// </summary>
+        
         /// <param name="buf">the buffer that holds a line</param>
         /// <param name="retKey">the key part of the given line</param>
         /// <param name="retVal">the value part of the given line</param>

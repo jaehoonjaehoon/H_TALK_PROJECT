@@ -43,36 +43,36 @@ using System.Threading;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// Server option class
-    /// </summary>
+    
 	public class IpcServerOps{
-        /// <summary>
+        
         /// Callback Object
-        /// </summary>
+        
 		public IpcServerCallbackInterface m_callBackObj;
 		
-		/// <summary>
+		
         /// Name of the pipe
-		/// </summary>
+		
         public string m_pipeName;
 		
-        /// <summary>
+        
         /// The maximum possible number of pipe instances
-        /// </summary>
+        
         public int m_maximumInstances;
-		/// <summary>
+		
         /// read byte size
-		/// </summary>
+		
         public int m_numOfReadBytes;
-		/// <summary>
+		
         /// write byte size
-		/// </summary>
+		
         public int m_numOfWriteBytes;
 
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
         /// <param name="pipeName">the name of the pipe</param>
         /// <param name="maximumInstance">maximum number of pipe instance</param>
         /// <param name="numOfReadyBytes">maximum read buffer size</param>
@@ -86,9 +86,9 @@ namespace EpLibrary.cs
             m_numOfWriteBytes=numOfWriteBytes;
             m_callBackObj=callBackObj;
         }
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
 		public IpcServerOps()
 		{
             m_callBackObj = null;
@@ -99,115 +99,115 @@ namespace EpLibrary.cs
 
 		}
 
-		/// <summary>
+		
         /// Default IPC Server options
-		/// </summary>
+		
 		public static IpcServerOps defaultIpcServerOps;
 	};
 
-    /// <summary>
+    
     /// IPC Server Interface
-    /// </summary>
+    
 	public interface IpcServerInterface{
 
-        /// <summary>
+        
         /// Get the pipe name of server
-        /// </summary>
+        
         /// <returns>the pipe name in string</returns>
 		string GetFullPipeName();
 
 
-        /// <summary>
+        
         /// Get the Maximum Instances of server
-        /// </summary>
+        
         /// <returns>the Maximum Instances</returns>
 		int GetMaximumInstances();
 
 
-        /// <summary>
+        
         /// Start the server
-        /// </summary>
+        
         /// <param name="ops">the server options</param>
 		void StartServer(IpcServerOps ops);
-        /// <summary>
+        
         /// Stop the server
-        /// </summary>
+        
 		void StopServer();
 
-        /// <summary>
+        
         /// Check if the server is started
-        /// </summary>
+        
         /// <returns>true if the server is started otherwise false</returns>
 		bool IsServerStarted();
 
-        /// <summary>
+        
         /// Terminate all clients' socket connected.
-        /// </summary>
+        
 		void ShutdownAllClient();
 
-        /// <summary>
+        
         /// Get the maximum write data byte size
-        /// </summary>
+        
         /// <returns>the maximum write data byte size</returns>
 		int GetMaxWriteDataByteSize();
-        /// <summary>
+        
         /// Get the maximum read data byte size
-        /// </summary>
+        
         /// <returns>the maximum read data byte size</returns>
 		int GetMaxReadDataByteSize();
 
-        /// <summary>
+        
         /// Return the number of pipe connected
-        /// </summary>
+        
         /// <returns>number of pipe connected</returns>
         int GetPipeCount();
 	}
 
-    /// <summary>
+    
     /// IPC Interface
-    /// </summary>
+    
 	public interface IpcInterface{
 
-        /// <summary>
+        
         /// Write data to the pipe
-        /// </summary>
+        
         /// <param name="data">the data to write</param>
         /// <param name="offset">offset to start write from given data</param>
         /// <param name="dataByteSize">byte size of the data to write</param>
 		void Write(byte[] data, int offset ,int dataByteSize);
 
-        /// <summary>
+        
         /// Check if the connection is alive
-        /// </summary>
+        
         /// <returns>true if the connection is alive otherwise false</returns>
 		bool IsConnectionAlive();
 
-        /// <summary>
+        
         /// Kill the connection
-        /// </summary>
+        
 		void KillConnection();
 
-        /// <summary>
+        
         /// Kill current connection and wait for other connection
-        /// </summary>
+        
         void Reconnect();
 	}
 
-    /// <summary>
+    
     /// Server Callback Interface
-    /// </summary>
+    
     public interface IpcServerCallbackInterface
     {
-        /// <summary>
+        
         /// When server started
-        /// </summary>
+        
         /// <param name="server">the server</param>
         /// <param name="status">started status</param>
         void OnServerStarted(IpcServerInterface server, IpcStartStatus status);
 
-        /// <summary>
+        
         /// When accepted client tries to make connection.
-        /// </summary>
+        
         /// <param name="server">the server</param>
         /// <param name="pipe">the pipe connected</param>
         /// <param name="status">status of connection</param>
@@ -215,26 +215,26 @@ namespace EpLibrary.cs
         /// so user can configure the pipe before the connection is actually made.</remarks>
         void OnNewConnection(IpcServerInterface server, IpcInterface pipe, IpcConnectStatus status);
 
-        /// <summary>
+        
         /// Received the data from the client.
-        /// </summary>
+        
         /// <param name="server">the server</param>
         /// <param name="pipe">the pipe which received the packet</param>
         /// <param name="receivedData">the received data</param>
         /// <param name="receivedDataByteSize">the received data byte size</param>
         void OnReadComplete(IpcServerInterface server, IpcInterface pipe, byte[] receivedData, int receivedDataByteSize);
 
-        /// <summary>
+        
         /// When write completed to pipe
-        /// </summary>
+        
         /// <param name="server">the server</param>
         /// <param name="pipe">the pipe which wrote the packet</param>
         /// <param name="status">the status of write</param>
         void OnWriteComplete(IpcServerInterface server, IpcInterface pipe, IpcWriteStatus status);
 
-        /// <summary>
+        
         /// when pipe is disconnected
-        /// </summary>
+        
         /// <param name="server">the server</param>
         /// <param name="pipe">the pipe, disconnected</param>
         void OnDisconnected(IpcServerInterface server, IpcInterface pipe);

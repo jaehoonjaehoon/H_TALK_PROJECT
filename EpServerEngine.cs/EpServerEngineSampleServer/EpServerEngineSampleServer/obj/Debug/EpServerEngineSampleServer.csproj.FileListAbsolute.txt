@@ -40,3 +40,13 @@ D:\99_사원 정재훈\오픈소스 개인 프로젝트\EpServerEngine.cs\EpServ
 D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\bin\Debug\EpServerEngineSampleServer.exe.config
 D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\obj\Debug\EpServerEngineSampleServer.exe
 D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\obj\Debug\EpServerEngineSampleServer.pdb
+D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\bin\Debug\EpServerEngineSampleServer.exe
+D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\bin\Debug\EpServerEngineSampleServer.pdb
+D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\bin\Debug\EpLibrary.cs.dll
+D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\bin\Debug\EpServerEngine.cs.dll
+D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\bin\Debug\EpLibrary.cs.pdb
+D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\bin\Debug\EpServerEngine.cs.pdb
+D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\obj\Debug\EpServerEngineSampleServer.csprojResolveAssemblyReference.cache
+D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\obj\Debug\EpServerEngineSampleServer.FrmSampleServer.resources
+D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\obj\Debug\EpServerEngineSampleServer.Properties.Resources.resources
+D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleServer\EpServerEngineSampleServer\obj\Debug\EpServerEngineSampleServer.csproj.GenerateResource.Cache

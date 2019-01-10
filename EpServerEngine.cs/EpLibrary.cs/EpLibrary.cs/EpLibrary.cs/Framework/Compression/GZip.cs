@@ -47,9 +47,9 @@ namespace EpLibrary.cs
     public class GZip
     {
 
-        /// <summary>
+        
         /// Compress the given gzipData string
-        /// </summary>
+        
         /// <param name="gzipData">string data to compress</param>
         /// <returns>compressed data</returns>
         public static string Compress(string gzipData)
@@ -67,9 +67,9 @@ namespace EpLibrary.cs
             return null;
         }
 
-        /// <summary>
+        
         /// Decompress the given gzipData string
-        /// </summary>
+        
         /// <param name="gzipData">string data to decompress</param>
         /// <returns>decompressed data</returns>
         public static string Decompress(string cryptData)
@@ -88,9 +88,9 @@ namespace EpLibrary.cs
             return null;
         }
 
-        /// <summary>
+        
         /// Decompress the given byte array
-        /// </summary>
+        
         /// <param name="gzip">byte array to decompress</param>
         /// <returns>decompressed byte array</returns>
         public static byte[] Decompress(byte[] gzip)
@@ -118,9 +118,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Compress the given byte array
-        /// </summary>
+        
         /// <param name="raw">byte array to compress</param>
         /// <returns>compressed byte array</returns>
         public static byte[] Compress(byte[] raw)
@@ -134,9 +134,9 @@ namespace EpLibrary.cs
                 return memory.ToArray();
             }
         }
-        /// <summary>
+        
         /// Decompress the given byte array
-        /// </summary>
+        
         /// <param name="gzip">byte array to decompress</param>
         /// <param name="offset">index to start decompress</param>
         /// <param name="count">size of given byte</param>
@@ -166,9 +166,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Compress the given byte array
-        /// </summary>
+        
         /// <param name="raw">byte array to compress</param>
         /// <param name="offset">index to start compress</param>
         /// <param name="count">size of given byte</param>

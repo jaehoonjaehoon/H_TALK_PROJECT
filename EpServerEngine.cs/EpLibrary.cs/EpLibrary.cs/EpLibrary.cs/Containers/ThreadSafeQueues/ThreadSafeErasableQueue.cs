@@ -43,23 +43,23 @@ using System.Text;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// A class for Thread Safe Erasable Queue.
-    /// </summary>
+    
     /// <typeparam name="DataType">the element type</typeparam>
     public class ThreadSafeErasableQueue<DataType>
     {
-        /// <summary>
+        
         /// Default constructor
-        /// </summary>
+        
         public ThreadSafeErasableQueue()
         {
 
         }
 
-        /// <summary>
+        
         /// Default copy constructor
-        /// </summary>
+        
         /// <param name="b">the object to copy from</param>
 		public ThreadSafeErasableQueue(ThreadSafeErasableQueue<DataType> b)
         {
@@ -67,9 +67,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
          /// Check if the queue is empty.
-        /// </summary>
+        
          /// <returns>true if the queue is empty, otherwise false.</returns>
 		public bool IsEmpty()
         {
@@ -79,9 +79,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Check if the given obj exists in the queue.
-        /// </summary>
+        
         /// <param name="data">obj to check</param>
         /// <returns>true if exists, otherwise false.</returns>
 		public bool IsExist(DataType data)
@@ -92,9 +92,9 @@ namespace EpLibrary.cs
             }
         }
 
-       /// <summary>
+       
         /// Return the size of the queue.
-       /// </summary>
+       
 		public int Count
         {
             get
@@ -106,9 +106,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Return the first item within the queue.
-        /// </summary>
+        
         /// <returns>the first element of the queue.</returns>
 		public DataType Front()
         {
@@ -118,9 +118,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Return the last item within the queue.
-        /// </summary>
+        
         /// <returns>the last element of the queue.</returns>
 		public DataType Back()
         {
@@ -130,9 +130,9 @@ namespace EpLibrary.cs
             }
         }
 
-		/// <summary>
+		
         /// Insert the new item into the queue.
-		/// </summary>
+		
         /// <param name="data">The inserting data.</param>
 		public virtual void Enqueue(DataType data)
         {
@@ -142,9 +142,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Erase the given item from the queue.
-        /// </summary>
+        
         /// <param name="data">The data to erase.</param>
         /// <returns>true if successful, otherwise false</returns>
         public bool Erase(DataType data)
@@ -168,9 +168,9 @@ namespace EpLibrary.cs
             
         }
 
-        /// <summary>
+        
         /// Remove the first item from the queue.
-        /// </summary>
+        
         public virtual DataType Dequeue()
         {
             lock (m_queueLock)
@@ -181,9 +181,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Clear the queue.
-        /// </summary>
+        
 		public void Clear()
         {
             lock (m_queueLock)
@@ -192,9 +192,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Return the actual queue structure
-        /// </summary>
+        
         /// <returns>the actual queue structure</returns>
         public List<DataType> GetQueue()
         {
@@ -204,14 +204,14 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Actual queue structure
-        /// </summary>
+        
 		protected List<DataType> m_queue=new List<DataType>();
 
-        /// <summary>
+        
         /// lock
-        /// </summary>
+        
         protected Object m_queueLock = new Object();
 
     }

@@ -31,9 +31,9 @@ using System.IO;
 namespace EpLibrary.cs
 {
 
-    /// <summary>
+    
     /// Represents a Zlib stream for compression or decompression.
-    /// </summary>
+    
     /// <remarks>
     ///
     /// <para>
@@ -73,9 +73,9 @@ namespace EpLibrary.cs
         internal ZlibBaseStream _baseStream;
         bool _disposed;
 
-        /// <summary>
+        
         /// Create a <c>ZlibStream</c> using the specified <c>CompressionMode</c>.
-        /// </summary>
+        
         /// <remarks>
         ///
         /// <para>
@@ -131,10 +131,10 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         ///   Create a <c>ZlibStream</c> using the specified <c>CompressionMode</c> and
         ///   the specified <c>CompressionLevel</c>.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///
@@ -195,11 +195,11 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         ///   Create a <c>ZlibStream</c> using the specified <c>CompressionMode</c>, and
         ///   explicitly specify whether the captive stream should be left open after
         ///   Deflation or Inflation.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///
@@ -234,11 +234,11 @@ namespace EpLibrary.cs
         {
         }
 
-        /// <summary>
+        
         ///   Create a <c>ZlibStream</c> using the specified <c>CompressionMode</c>
         ///   and the specified <c>CompressionLevel</c>, and explicitly specify
         ///   whether the stream should be left open after Deflation or Inflation.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///
@@ -322,10 +322,10 @@ namespace EpLibrary.cs
 
         #region Zlib properties
 
-        /// <summary>
+        
         /// This property sets the flush behavior on the stream.
         /// Sorry, though, not sure exactly how to describe all the various settings.
-        /// </summary>
+        
         virtual public FlushType FlushMode
         {
             get { return (this._baseStream._flushMode); }
@@ -336,9 +336,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         ///   The size of the working buffer for the compression codec.
-        /// </summary>
+        
         ///
         /// <remarks>
         /// <para>
@@ -370,13 +370,11 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary> Returns the total number of bytes input so far.</summary>
         virtual public long TotalIn
         {
             get { return this._baseStream._z.TotalBytesIn; }
         }
 
-        /// <summary> Returns the total number of bytes output so far.</summary>
         virtual public long TotalOut
         {
             get { return this._baseStream._z.TotalBytesOut; }
@@ -386,9 +384,9 @@ namespace EpLibrary.cs
 
         #region System.IO.Stream methods
 
-        /// <summary>
+        
         ///   Dispose the stream.
-        /// </summary>
+        
         /// <remarks>
         ///   <para>
         ///     This may or may not result in a <c>Close()</c> call on the captive
@@ -427,9 +425,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Indicates whether the stream can be read.
-        /// </summary>
+        
         /// <remarks>
         /// The return value depends on whether the captive stream supports reading.
         /// </remarks>
@@ -442,9 +440,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Indicates whether the stream supports Seek operations.
-        /// </summary>
+        
         /// <remarks>
         /// Always returns false.
         /// </remarks>
@@ -453,9 +451,9 @@ namespace EpLibrary.cs
             get { return false; }
         }
 
-        /// <summary>
+        
         /// Indicates whether the stream can be written.
-        /// </summary>
+        
         /// <remarks>
         /// The return value depends on whether the captive stream supports writing.
         /// </remarks>
@@ -468,26 +466,26 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Flush the stream.
-        /// </summary>
+        
         public override void Flush()
         {
             if (_disposed) throw new ObjectDisposedException("ZlibStream");
             _baseStream.Flush();
         }
 
-        /// <summary>
+        
         /// Reading this property always throws a <see cref="NotSupportedException"/>.
-        /// </summary>
+        
         public override long Length
         {
             get { throw new NotSupportedException(); }
         }
 
-        /// <summary>
+        
         ///   The position of the stream pointer.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///   Setting this property always throws a <see
@@ -510,9 +508,9 @@ namespace EpLibrary.cs
             set { throw new NotSupportedException(); }
         }
 
-        /// <summary>
+        
         /// Read data from the stream.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///
@@ -549,9 +547,9 @@ namespace EpLibrary.cs
             return _baseStream.Read(buffer, offset, count);
         }
 
-        /// <summary>
+        
         /// Calling this method always throws a <see cref="NotSupportedException"/>.
-        /// </summary>
+        
         /// <param name="offset">
         ///   The offset to seek to....
         ///   IF THIS METHOD ACTUALLY DID ANYTHING.
@@ -567,9 +565,9 @@ namespace EpLibrary.cs
             throw new NotSupportedException();
         }
 
-        /// <summary>
+        
         /// Calling this method always throws a <see cref="NotSupportedException"/>.
-        /// </summary>
+        
         /// <param name="value">
         ///   The new value for the stream length....  IF
         ///   THIS METHOD ACTUALLY DID ANYTHING.
@@ -579,9 +577,9 @@ namespace EpLibrary.cs
             throw new NotSupportedException();
         }
 
-        /// <summary>
+        
         /// Write data to the stream.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///
@@ -613,9 +611,9 @@ namespace EpLibrary.cs
         #endregion
 
 
-        /// <summary>
+        
         ///   Compress a string into a byte array using ZLIB.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///   Uncompress it with <see cref="ZlibStream.UncompressString(byte[])"/>.
@@ -643,9 +641,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Compress a byte array into a new byte array using ZLIB.
-        /// </summary>
+        
         ///
         /// <remarks>
         ///   Uncompress it with <see cref="ZlibStream.UncompressBuffer(byte[])"/>.
@@ -672,9 +670,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Uncompress a ZLIB-compressed byte array into a single string.
-        /// </summary>
+        
         ///
         /// <seealso cref="ZlibStream.CompressString(String)"/>
         /// <seealso cref="ZlibStream.UncompressBuffer(byte[])"/>
@@ -696,9 +694,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         ///   Uncompress a ZLIB-compressed byte array into a byte array.
-        /// </summary>
+        
         ///
         /// <seealso cref="ZlibStream.CompressBuffer(byte[])"/>
         /// <seealso cref="ZlibStream.UncompressString(byte[])"/>

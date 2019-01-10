@@ -47,29 +47,29 @@ using System.Threading;
 namespace EpLibrary.cs
 {
 
-    /// <summary>
+    
     /// Download file status
-    /// </summary>
+    
     public enum DownloadFileStatus
     {
-        /// <summary>
+        
         /// Success
-        /// </summary>
+        
         SUCCESS,
-        /// <summary>
+        
         /// Failed
-        /// </summary>
+        
         FAILED
     }
 
-    /// <summary>
+    
     /// WebRequestEx class
-    /// </summary>
+    
     public class WebRequestEx
     {
-        /// <summary>
+        
         /// Get response from the given uri with given credentials
-        /// </summary>
+        
         /// <param name="uri">uri</param>
         /// <param name="credentials">credentials</param>
         /// <param name="waitTimeInMilliSec">wait time in milliseconds</param>
@@ -94,9 +94,9 @@ namespace EpLibrary.cs
             return result;
         }
 
-        /// <summary>
+        
         /// Get response from the given uri with given credentials
-        /// </summary>
+        
         /// <param name="uri">uri</param>
         /// <param name="credentials">credentials</param>
         /// <param name="callbackFunc">callback function</param>
@@ -115,9 +115,9 @@ namespace EpLibrary.cs
             client.DownloadStringAsync(new Uri(uri, UriKind.Absolute));
         }
 
-        /// <summary>
+        
         /// Download file from given uri to given filepath
-        /// </summary>
+        
         /// <param name="uri">uri</param>
         /// <param name="filepath">filepath</param>
         /// <param name="waitTimeInMilliSec">wait time in milliseconds</param>
@@ -151,9 +151,9 @@ namespace EpLibrary.cs
             doneEvent.WaitForEvent(waitTimeInMilliSec);
         }
 
-        /// <summary>
+        
         /// Download data from given uri and call callback
-        /// </summary>
+        
         /// <param name="uri">uri</param>
         /// <param name="callbackFunc">callback function</param>
         public static void DownloadDataAsync(String uri, Action<Stream> callbackFunc)
@@ -176,9 +176,9 @@ namespace EpLibrary.cs
             webClient.OpenReadAsync(new Uri(uri, UriKind.Absolute));
         }
 
-        /// <summary>
+        
         /// Download file from given uri to given filepath and call callback
-        /// </summary>
+        
         /// <param name="uri">uril</param>
         /// <param name="filepath">filepath</param>
         /// <param name="callbackFunc">callback function</param>

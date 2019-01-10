@@ -49,56 +49,56 @@ namespace EpLibrary.cs
 {
     public sealed class IpcClient : ThreadEx, IpcClientInterface
     {
-        /// <summary>
+        
         /// connect wait time in milliseconds
-        /// </summary>
+        
         int m_connectWaitTimeInMillisec = 0;
-        /// <summary>
+        
         /// Pipe handle
-        /// </summary>
+        
         NamedPipeClientStream m_pipeHandle;
-        /// <summary>
+        
         /// flag whether the server is started
-        /// </summary>
+        
         bool m_connected;
-        /// <summary>
+        
         /// IPC client options
-        /// </summary>
+        
         IpcClientOps m_options;
 
-        /// <summary>
+        
         /// Write buffer queue
-        /// </summary>
+        
         Queue<PipeWriteElem> m_writeQueue=new Queue<PipeWriteElem>();
-        /// <summary>
+        
         /// Read buffer
-        /// </summary>
+        
         byte[] m_readBuffer;
 
-        /// <summary>
+        
         /// General lock object
-        /// </summary>
+        
         Object m_generalLock = new Object();
         
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
 		public IpcClient()
         {
             m_readBuffer = null;
         }
 
-        /// <summary>
+        
         /// Default Destructor
-        /// </summary>
+        
 		~IpcClient()
         {
             Disconnect();
         }
 
-        /// <summary>
+        
         /// Get the pipe name of server
-        /// </summary>
+        
         /// <returns> the pipe name in string</returns>
 		public string GetFullPipeName()
         {
@@ -107,9 +107,9 @@ namespace EpLibrary.cs
 
 		
 
-        /// <summary>
+        
         /// Connect to the server
-        /// </summary>
+        
         /// <param name="ops">the client options</param>
         /// <param name="waitTimeInMilliSec"> the wait time for connection in milli-second.</param>
 		public void Connect(IpcClientOps ops, int waitTimeInMilliSec)
@@ -138,9 +138,9 @@ namespace EpLibrary.cs
             Start();
 
         }
-        /// <summary>
+        
         /// Actual connect function
-        /// </summary>
+        
         protected override void execute()
         {
             lock (m_generalLock)
@@ -187,9 +187,9 @@ namespace EpLibrary.cs
             startReceive();
         }
 
-        /// <summary>
+        
         /// start receiving from pipe
-        /// </summary>
+        
         private void startReceive()
         {
 
@@ -207,9 +207,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Stop the server
-        /// </summary>
+        
 		public void Disconnect()
         {
             lock (m_generalLock)
@@ -234,9 +234,9 @@ namespace EpLibrary.cs
             t.Start();
         }
 
-        /// <summary>
+        
         /// Check if the client is connected to server
-        /// </summary>
+        
         /// <returns>true if the client is connected to server otherwise false</returns>
       
 		public bool IsConnected()
@@ -244,18 +244,18 @@ namespace EpLibrary.cs
             return m_connected;
         }
 
-        /// <summary>
+        
         ///  Get the maximum write data byte size
-        /// </summary>
+        
         /// <returns>the maximum write data byte size</returns>
         public int GetMaxWriteDataByteSize()
         {
             return m_options.m_numOfWriteBytes;
         }
 
-        /// <summary>
+        
         /// Get the maximum read data byte size
-        /// </summary>
+        
         /// <returns>the maximum read data byte size</returns>
 		public int GetMaxReadDataByteSize()
         {
@@ -263,9 +263,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Write data to the pipe
-        /// </summary>
+        
         /// <param name="data"> the data to write</param>
         /// <param name="offset">offset to start write from given data</param>
         /// <param name="dataByteSize">byte size of the data</param>
@@ -298,9 +298,9 @@ namespace EpLibrary.cs
 
         }
 	
-        /// <summary>
+        
         /// Handles when Read is completed
-        /// </summary>
+        
         /// <param name="result">AsyncResult</param>
 		private void OnReadComplete(IAsyncResult result)
         {
@@ -331,9 +331,9 @@ namespace EpLibrary.cs
             pipeInst.m_options.m_callBackObj.OnReadComplete(pipeInst, readBuffer, readByte);
         }
 
-        /// <summary>
+        
         /// Handles when Write is completed
-        /// </summary>
+        
         /// <param name="result">AsyncResult</param>
         private void OnWriteComplete(IAsyncResult result)
         {

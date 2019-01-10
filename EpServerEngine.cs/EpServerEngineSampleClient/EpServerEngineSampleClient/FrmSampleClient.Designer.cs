@@ -2,14 +2,14 @@
 {
     partial class FrmSampleClient
     {
-        /// <summary>
+        
         /// Required designer variable.
-        /// </summary>
+        
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        
         /// Clean up any resources being used.
-        /// </summary>
+        
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
@@ -22,10 +22,10 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
+        
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
-        /// </summary>
+        
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSampleClient));
@@ -52,36 +52,39 @@
             this.TB_ID_INPUT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TB_ID_INPUT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_ID_INPUT.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_ID_INPUT.Location = new System.Drawing.Point(94, 226);
+            this.TB_ID_INPUT.Location = new System.Drawing.Point(95, 225);
             this.TB_ID_INPUT.Name = "TB_ID_INPUT";
             this.TB_ID_INPUT.Size = new System.Drawing.Size(211, 18);
             this.TB_ID_INPUT.TabIndex = 19;
+            this.TB_ID_INPUT.Enter += new System.EventHandler(this.TB_INPUT_Enter);
             // 
             // TB_PWD_INPUT
             // 
             this.TB_PWD_INPUT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TB_PWD_INPUT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_PWD_INPUT.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_PWD_INPUT.Location = new System.Drawing.Point(94, 273);
+            this.TB_PWD_INPUT.Location = new System.Drawing.Point(95, 272);
             this.TB_PWD_INPUT.Name = "TB_PWD_INPUT";
             this.TB_PWD_INPUT.Size = new System.Drawing.Size(211, 18);
             this.TB_PWD_INPUT.TabIndex = 21;
+            this.TB_PWD_INPUT.Enter += new System.EventHandler(this.TB_PWD_INPUT_Enter);
             // 
             // PB_LOGIN
             // 
             this.PB_LOGIN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_LOGIN.Image = global::EpServerEngineSampleClient.Properties.Resources.LOG_IN;
-            this.PB_LOGIN.Location = new System.Drawing.Point(99, 329);
+            this.PB_LOGIN.Location = new System.Drawing.Point(100, 328);
             this.PB_LOGIN.Name = "PB_LOGIN";
             this.PB_LOGIN.Size = new System.Drawing.Size(200, 50);
             this.PB_LOGIN.TabIndex = 25;
             this.PB_LOGIN.TabStop = false;
+            this.PB_LOGIN.Click += new System.EventHandler(this.PB_LOGIN_Click);
             // 
             // PB_DEV_INFO
             // 
             this.PB_DEV_INFO.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_DEV_INFO.Image = global::EpServerEngineSampleClient.Properties.Resources.DEV_INFO;
-            this.PB_DEV_INFO.Location = new System.Drawing.Point(155, 479);
+            this.PB_DEV_INFO.Location = new System.Drawing.Point(153, 482);
             this.PB_DEV_INFO.Name = "PB_DEV_INFO";
             this.PB_DEV_INFO.Size = new System.Drawing.Size(92, 23);
             this.PB_DEV_INFO.TabIndex = 24;
@@ -91,7 +94,7 @@
             // 
             this.PB_ID_AND_PWD_SEARCH.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_ID_AND_PWD_SEARCH.Image = global::EpServerEngineSampleClient.Properties.Resources.ID_AND_PWD_SEARCH;
-            this.PB_ID_AND_PWD_SEARCH.Location = new System.Drawing.Point(121, 397);
+            this.PB_ID_AND_PWD_SEARCH.Location = new System.Drawing.Point(122, 396);
             this.PB_ID_AND_PWD_SEARCH.Name = "PB_ID_AND_PWD_SEARCH";
             this.PB_ID_AND_PWD_SEARCH.Size = new System.Drawing.Size(157, 23);
             this.PB_ID_AND_PWD_SEARCH.TabIndex = 23;
@@ -101,18 +104,19 @@
             // 
             this.PB_ADD_USER.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_ADD_USER.Image = global::EpServerEngineSampleClient.Properties.Resources.ADD_USER;
-            this.PB_ADD_USER.Location = new System.Drawing.Point(156, 426);
+            this.PB_ADD_USER.Location = new System.Drawing.Point(157, 425);
             this.PB_ADD_USER.Name = "PB_ADD_USER";
             this.PB_ADD_USER.Size = new System.Drawing.Size(92, 23);
             this.PB_ADD_USER.TabIndex = 22;
             this.PB_ADD_USER.TabStop = false;
+            this.PB_ADD_USER.Click += new System.EventHandler(this.PB_ADD_USER_Click);
             // 
             // PB_PWD
             // 
             this.PB_PWD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_PWD.Image = global::EpServerEngineSampleClient.Properties.Resources.ID_BOX;
             this.PB_PWD.InitialImage = ((System.Drawing.Image)(resources.GetObject("PB_PWD.InitialImage")));
-            this.PB_PWD.Location = new System.Drawing.Point(82, 259);
+            this.PB_PWD.Location = new System.Drawing.Point(83, 258);
             this.PB_PWD.Name = "PB_PWD";
             this.PB_PWD.Size = new System.Drawing.Size(234, 50);
             this.PB_PWD.TabIndex = 20;
@@ -123,7 +127,7 @@
             this.PB_ID_BOX.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_ID_BOX.Image = global::EpServerEngineSampleClient.Properties.Resources.ID_BOX;
             this.PB_ID_BOX.InitialImage = ((System.Drawing.Image)(resources.GetObject("PB_ID_BOX.InitialImage")));
-            this.PB_ID_BOX.Location = new System.Drawing.Point(82, 212);
+            this.PB_ID_BOX.Location = new System.Drawing.Point(83, 211);
             this.PB_ID_BOX.Name = "PB_ID_BOX";
             this.PB_ID_BOX.Size = new System.Drawing.Size(234, 50);
             this.PB_ID_BOX.TabIndex = 17;
@@ -134,7 +138,7 @@
             this.PBLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PBLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBLogo.BackgroundImage")));
             this.PBLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PBLogo.Location = new System.Drawing.Point(32, 23);
+            this.PBLogo.Location = new System.Drawing.Point(33, 22);
             this.PBLogo.Name = "PBLogo";
             this.PBLogo.Size = new System.Drawing.Size(367, 221);
             this.PBLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -146,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.ClientSize = new System.Drawing.Size(393, 508);
+            this.ClientSize = new System.Drawing.Size(394, 507);
             this.Controls.Add(this.PB_LOGIN);
             this.Controls.Add(this.PB_DEV_INFO);
             this.Controls.Add(this.PB_ID_AND_PWD_SEARCH);

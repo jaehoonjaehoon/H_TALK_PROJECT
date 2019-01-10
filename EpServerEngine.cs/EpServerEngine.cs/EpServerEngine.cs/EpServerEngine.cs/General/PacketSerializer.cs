@@ -57,10 +57,6 @@ namespace EpServerEngine.cs
         ALLOW_ALL_ASSEMBLY_VERSION_DESERIALIZATION,
         SILVERLIGHT_SERIALIZER
     }
-    /// <summary>
-    /// Packet Serializer
-    /// </summary>
-    /// <typeparam name="PacketStruct">packet class type</typeparam>
     public sealed class PacketSerializer<PacketStruct> where PacketStruct : class,ISerializable
     {
         sealed class AllowAllAssemblyVersionDeserializationBinder : SerializationBinder
@@ -75,34 +71,17 @@ namespace EpServerEngine.cs
             }
         }
 
-        /// <summary>
-        /// stream
-        /// </summary>
         private MemoryStream m_stream = null;
-        /// <summary>
-        /// formatter
-        /// </summary>
         private BinaryFormatter m_formatter = new BinaryFormatter();
         
-        /// <summary>
-        /// lock
-        /// </summary>
         private Object m_packetContainerLock = new Object();
 
-        /// <summary>
-        /// Serializer Mode
-        /// </summary>
         public SerializerMode Mode
         {
             get;
             set;
         }
 
-        /// <summary>
-        /// Default constructor
-        /// </summary>
-        /// <param name="packet">packet class object</param>
-        /// <param name="serializerMode">serializer mode</param>
         public PacketSerializer(PacketStruct packet = null, SerializerMode serializerMode = SerializerMode.SILVERLIGHT_SERIALIZER)
         {
             m_formatter.AssemblyFormat = FormatterAssemblyStyle.Simple;
@@ -122,11 +101,6 @@ namespace EpServerEngine.cs
             
         }
 
-        /// <summary>
-        /// Default  constructor
-        /// </summary>
-        /// <param name="rawData">serialized packet</param>
-        /// <param name="serializerMode">serializer mode</param>
         public PacketSerializer(byte[] rawData, SerializerMode serializerMode = SerializerMode.SILVERLIGHT_SERIALIZER)
         {
             m_formatter.AssemblyFormat = FormatterAssemblyStyle.Simple;
@@ -143,13 +117,6 @@ namespace EpServerEngine.cs
             m_stream = new MemoryStream(rawData);
         }
 
-        /// <summary>
-        /// Default  constructor
-        /// </summary>
-        /// <param name="rawData">serialized packet</param>
-        /// <param name="offset">rawData offset</param>
-        /// <param name="count">rawData byte size</param>
-        /// <param name="serializerMode">serializer mode</param>
         public PacketSerializer(byte[] rawData, int offset, int count, SerializerMode serializerMode = SerializerMode.SILVERLIGHT_SERIALIZER)
         {
             m_formatter.AssemblyFormat = FormatterAssemblyStyle.Simple;
@@ -166,10 +133,6 @@ namespace EpServerEngine.cs
             m_stream = new MemoryStream(rawData, offset, count);
         }
 
-        /// <summary>
-        /// Default copy constructor
-        /// </summary>
-        /// <param name="orig">the object to copy from</param>
         public PacketSerializer(PacketSerializer<PacketStruct> orig)
         {
             m_formatter.AssemblyFormat = FormatterAssemblyStyle.Simple;
@@ -187,10 +150,6 @@ namespace EpServerEngine.cs
         }
 
 
-        /// <summary>
-        /// Get packet class object
-        /// </summary>
-        /// <returns>packet class object</returns>
         public PacketStruct GetPacket()
         {
             m_stream.Seek(0, SeekOrigin.Begin);
@@ -208,29 +167,17 @@ namespace EpServerEngine.cs
             return retPacket;
         }
 
-        /// <summary>
-        /// Get serialized packet
-        /// </summary>
-        /// <returns>serialized packet</returns>
         public byte[] GetPacketRaw()
         {
             //return m_stream.ToArray();
             return m_stream.GetBuffer();
 
         }
-        /// <summary>
-        /// Return size of packet in byte
-        /// </summary>
-        /// <returns>size of packet in byte</returns>
         public long GetPacketByteSize()
         {
             return m_stream.Length;   
         }
 
-        /// <summary>
-        /// Set packet class object
-        /// </summary>
-        /// <param name="packet">packet class object</param>
         public void SetPacket(PacketStruct packet)
         {
             m_stream = new MemoryStream();
@@ -246,22 +193,12 @@ namespace EpServerEngine.cs
             }
         }
 
-        /// <summary>
-        /// Set serialize packet
-        /// </summary>
-        /// <param name="rawData">serialize packet</param>
         public void SetPacket(byte[] rawData)
         {
             m_stream = new MemoryStream(rawData);
 
         }
 
-        /// <summary>
-        /// Set serialize packet
-        /// </summary>
-        /// <param name="rawData">serialize packet</param>
-        /// <param name="offset">rawData offset</param>
-        /// <param name="count">rawData byte size</param>
         public void SetPacket(byte[] rawData, int offset,int count)
         {
             m_stream = new MemoryStream(rawData, offset, count);

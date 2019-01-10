@@ -44,38 +44,38 @@ using System.IO;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// A class for Binary File.
-    /// </summary>
+    
     public class BinaryFile
     {
-        /// <summary>
+        
         /// Binary stream reader
-        /// </summary>
+        
         protected BinaryReader m_reader=null;
-        /// <summary>
+        
         /// Binary stream writer
-        /// </summary>
+        
         protected BinaryWriter m_writer=null;
-        /// <summary>
+        
         /// stream
-        /// </summary>
+        
         protected MemoryStream m_stream=new MemoryStream();
-        /// <summary>
+        
         /// lock
-        /// </summary>
+        
         protected Object m_baseBinaryLock=new Object();
 
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
 		public BinaryFile()
         {
         }
 
-        /// <summary>
+        
         /// Default Copy Constructor
-        /// </summary>
+        
         /// <param name="b">the object to copy from</param>
         public BinaryFile(BinaryFile b)
         {
@@ -87,9 +87,9 @@ namespace EpLibrary.cs
         }
 
 	
-        /// <summary>
+        
         /// Save the binary to the given file
-        /// </summary>
+        
         /// <param name="filename">the name of the file to save</param>
         /// <returns>true if successfully saved, otherwise false</returns>
         public bool SaveToFile(String filename)
@@ -118,9 +118,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Append the binary to the given file
-        /// </summary>
+        
         /// <param name="filename">the name of the file to append</param>
         /// <returns>true if successfully saved, otherwise false</returns>
         public bool AppendToFile(String filename)
@@ -150,9 +150,9 @@ namespace EpLibrary.cs
         }
 		
 
-        /// <summary>
+        
         /// Load the list of the properties from the given file
-        /// </summary>
+        
         /// <param name="filename">the name of the file to load</param>
         /// <returns>true if successfully loaded, otherwise false</returns>
         public bool LoadFromFile(String filename)
@@ -182,9 +182,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Get the current stream
-        /// </summary>
+        
         /// <returns>the current stream</returns>
         public MemoryStream GetStream()
         {
@@ -195,9 +195,9 @@ namespace EpLibrary.cs
         }
 
 		
-        /// <summary>
+        
         /// Set the stream as given stream
-        /// </summary>
+        
         /// <param name="stream">the stream to set</param>
         public void SetStream(MemoryStream stream)
         {

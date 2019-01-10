@@ -49,53 +49,53 @@ using EpLibrary.cs;
 
 namespace EpServerEngine.cs
 {
-    /// <summary>
+    
     /// IOCP TCP Server
-    /// </summary>
+    
     public sealed class IocpTcpServer:ThreadEx, INetworkServer
     {
-        /// <summary>
+        
         /// port
-        /// </summary>
+        
         private String m_port=ServerConf.DEFAULT_PORT;
-        /// <summary>
+        
         /// listner
-        /// </summary>
+        
         private TcpListener m_listener=null;
-        /// <summary>
+        
         /// server option
-        /// </summary>
+        
         private ServerOps m_serverOps = null;
 
-        /// <summary>
+        
         /// callback object
-        /// </summary>
+        
         private INetworkServerCallback m_callBackObj=null;
-        /// <summary>
+        
         /// general lock
-        /// </summary>
+        
         private Object m_generalLock = new Object();
 
-        /// <summary>
+        
         /// client socket list lock
-        /// </summary>
+        
         private Object m_listLock = new Object();
-        /// <summary>
+        
         /// client socket list
-        /// </summary>
+        
         private List<IocpTcpSocket> m_socketList=new List<IocpTcpSocket>();
 
-        /// <summary>
+        
         /// Default constructor
-        /// </summary>
+        
         public IocpTcpServer()
             : base()
         {
         }
 
-        /// <summary>
+        
         /// Default copy constructor
-        /// </summary>
+        
         /// <param name="b">the object to copy from</param>
         public IocpTcpServer(IocpTcpServer b)
             : base(b)
@@ -111,32 +111,32 @@ namespace EpServerEngine.cs
                 StopServer();
         }
 
-        /// <summary>
+        
         /// Return port
-        /// </summary>
+        
         /// <returns>port</returns>
         public String GetPort()
         {
             return m_port;
         }
 
-        /// <summary>
+        
         /// Callback Exception class
-        /// </summary>
+        
         private class CallbackException : Exception
         {
-            /// <summary>
+            
             /// Default constructor
-            /// </summary>
+            
             public CallbackException()
                 : base()
             {
 
             }
 
-            /// <summary>
+            
             /// Default constructor
-            /// </summary>
+            
             /// <param name="message">message for exception</param>
             public CallbackException(String message)
                 : base(message)
@@ -145,9 +145,9 @@ namespace EpServerEngine.cs
             }
         }
 
-        /// <summary>
+        
         /// Start the server and start accepting the client
-        /// </summary>
+        
         protected override void execute()
         {
             StartStatus status=StartStatus.FAIL_SOCKET_ERROR;
@@ -192,9 +192,9 @@ namespace EpServerEngine.cs
             m_callBackObj.OnServerStarted(this, StartStatus.SUCCESS);
         }
 
-        /// <summary>
+        
         /// Accept callback function
-        /// </summary>
+        
         /// <param name="result">result</param>
         private static void onAccept(IAsyncResult result)
         {
@@ -238,9 +238,9 @@ namespace EpServerEngine.cs
 
         }
 
-        /// <summary>
+        
         /// Start the server with given option
-        /// </summary>
+        
         /// <param name="ops">options</param>
         public void StartServer(ServerOps ops)
         {
@@ -254,9 +254,9 @@ namespace EpServerEngine.cs
             }
             Start();
         }
-        /// <summary>
+        
         /// Stop the server
-        /// </summary>
+        
         public void StopServer()
         {
             lock (m_generalLock)
@@ -272,9 +272,9 @@ namespace EpServerEngine.cs
                 m_callBackObj.OnServerStopped(this);
         }
 
-        /// <summary>
+        
         /// Check if the server is started
-        /// </summary>
+        
         /// <returns>true if the server is started, otherwise false</returns>
         public bool IsServerStarted()
         {
@@ -282,9 +282,9 @@ namespace EpServerEngine.cs
                 return true;
             return false;
         }
-        /// <summary>
+        
         /// Shut down all the client, connected
-        /// </summary>
+        
         public void ShutdownAllClient()
         {
             lock (m_listLock)
@@ -296,9 +296,9 @@ namespace EpServerEngine.cs
                 m_socketList.Clear();
             }
         }
-        /// <summary>
+        
         /// Broadcast the given packet to the all client, connected
-        /// </summary>
+        
         /// <param name="packet">the packet to broadcast</param>
         public void Broadcast(Packet packet)
         {
@@ -312,9 +312,9 @@ namespace EpServerEngine.cs
             
         }
 
-        /// <summary>
+        
         /// Return the client socket list
-        /// </summary>
+        
         /// <returns>the client socket list</returns>
         public List<IocpTcpSocket> GetClientSocketList()
         {
@@ -324,9 +324,9 @@ namespace EpServerEngine.cs
             }
         }
 
-        /// <summary>
+        
         /// Detach the given client from the server management
-        /// </summary>
+        
         /// <param name="clientSocket">the client to detach</param>
         /// <returns></returns>
         public bool DetachClient(IocpTcpSocket clientSocket)

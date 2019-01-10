@@ -39,3 +39,4 @@ D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleClient\EpServerEngineS
 D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleClient\EpServerEngineSampleClient\obj\Debug\EpServerEngineSampleClient.FrmSampleClient.resources
 D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleClient\EpServerEngineSampleClient\obj\Debug\EpServerEngineSampleClient.Properties.Resources.resources
 D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleClient\EpServerEngineSampleClient\obj\Debug\EpServerEngineSampleClient.csproj.GenerateResource.Cache
+D:\5_H_Talk_Project\EpServerEngine.cs\EpServerEngineSampleClient\EpServerEngineSampleClient\obj\Debug\EpServerEngineSampleClient.SignUpForm.resources

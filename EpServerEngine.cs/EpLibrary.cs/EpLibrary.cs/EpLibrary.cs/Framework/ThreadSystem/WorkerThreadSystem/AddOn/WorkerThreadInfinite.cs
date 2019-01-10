@@ -45,23 +45,23 @@ using System.Diagnostics;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// A class that implements infinite-looping Worker Thread Class.
-    /// </summary>
+    
     public sealed class WorkerThreadInfinite:BaseWorkerThread
     {
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
         /// <param name="policy">the life policy of this worker thread.</param>
         public WorkerThreadInfinite(ThreadLifePolicy policy):base(policy)
         {
             m_terminateEvent=new EventEx(false,EventResetMode.AutoReset);
         }
 
-        /// <summary>
+        
         /// Default copy constructor
-        /// </summary>
+        
         /// <param name="b">the object to copy from</param>
 		public WorkerThreadInfinite(WorkerThreadInfinite  b):base(b)
         {
@@ -69,9 +69,9 @@ namespace EpLibrary.cs
         }
 
 
-        /// <summary>
+        
         /// Wait for worker thread to terminate, and if not terminated, then Terminate.
-        /// </summary>
+        
         /// <param name="waitTimeInMilliSec">the time-out interval, in milliseconds.</param>
         /// <returns>the terminate result of the thread</returns>
         public new TerminateResult TerminateWorker(int waitTimeInMilliSec= Timeout.Infinite)
@@ -81,9 +81,9 @@ namespace EpLibrary.cs
 	        return TerminateAfter(waitTimeInMilliSec);
         }
 
-        /// <summary>
+        
         /// Actual infinite-looping Thread Code.
-        /// </summary>
+        
         protected override void execute()
         {
             try
@@ -126,9 +126,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Terminate Signal Event
-        /// </summary>
+        
 		private EventEx m_terminateEvent;
     }
 }

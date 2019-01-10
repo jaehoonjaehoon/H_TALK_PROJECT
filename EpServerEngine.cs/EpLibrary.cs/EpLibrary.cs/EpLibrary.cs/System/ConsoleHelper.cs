@@ -45,17 +45,17 @@ using System.Diagnostics;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// This is a class for Console Processing Class
-    /// </summary>
+    
     public class ConsoleHelper
     {
 
-        /// <summary>
+        
         /// Execute the given command to the console and return the result
         /// 
         /// ** waitStruct is ignored when isWaitForTerminate is false.
-        /// </summary>
+        
         /// <param name="command">the command to execute</param>
         /// <param name="arguments">the argument for the command</param>
         /// <param name="isDosCommand">flag whether the command is standard DOS command or not</param>
@@ -108,9 +108,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Execute the given executable file
-        /// </summary>
+        
         /// <param name="execFilePath">the program file path to execute</param>
         /// <param name="parameters">the parameter variables for executing file</param>
         public static void ExecuteProgram(String execFilePath, String parameters = null)

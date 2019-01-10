@@ -10,8 +10,6 @@ D:\99_사원 정재훈\오픈소스\EpServerEngine.cs\EpLibrary.cs\EpLibrary.cs\
 D:\99_사원 정재훈\오픈소스\EpServerEngine.cs\EpLibrary.cs\EpLibrary.cs\EpLibrary.cs\obj\Debug\EpLibrary.cs.pdb
 D:\5_H_Talk_Project\EpServerEngine.cs\EpLibrary.cs\EpLibrary.cs\EpLibrary.cs\bin\Debug\EpLibrary.cs.dll
 D:\5_H_Talk_Project\EpServerEngine.cs\EpLibrary.cs\EpLibrary.cs\EpLibrary.cs\bin\Debug\EpLibrary.cs.pdb
-D:\5_H_Talk_Project\EpServerEngine.cs\EpLibrary.cs\EpLibrary.cs\EpLibrary.cs\bin\Debug\EpLibrary.cs.dll.CodeAnalysisLog.xml
-D:\5_H_Talk_Project\EpServerEngine.cs\EpLibrary.cs\EpLibrary.cs\EpLibrary.cs\bin\Debug\EpLibrary.cs.dll.lastcodeanalysissucceeded
 D:\5_H_Talk_Project\EpServerEngine.cs\EpLibrary.cs\EpLibrary.cs\EpLibrary.cs\obj\Debug\EpLibrary.cs.csprojResolveAssemblyReference.cache
 D:\5_H_Talk_Project\EpServerEngine.cs\EpLibrary.cs\EpLibrary.cs\EpLibrary.cs\obj\Debug\EpLibrary.cs.dll
 D:\5_H_Talk_Project\EpServerEngine.cs\EpLibrary.cs\EpLibrary.cs\EpLibrary.cs\obj\Debug\EpLibrary.cs.pdb

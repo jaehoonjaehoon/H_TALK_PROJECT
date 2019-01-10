@@ -43,15 +43,15 @@ using System.Text;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// A class that generate the random number.
-    /// </summary>
+    
     public class RandomEx
     {
         private static Random m_random = new Random();
-        /// <summary>
+        
         /// Return a random number
-        /// </summary>
+        
         /// <returns>generated random number</returns>
         public static float Random()
         {

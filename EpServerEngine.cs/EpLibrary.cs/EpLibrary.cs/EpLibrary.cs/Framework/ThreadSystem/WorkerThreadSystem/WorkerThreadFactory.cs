@@ -44,14 +44,14 @@ using System.Diagnostics;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// A factory class that returns the Worker Thread objects.
-    /// </summary>
+    
     public class WorkerThreadFactory
     {
-        /// <summary>
+        
         /// Return the new worker thread object with given life policy.
-        /// </summary>
+        
         /// <param name="policy">the life policy of the thread to create.</param>
         /// <returns>the new worker thread object with given life policy.</returns>
         public static BaseWorkerThread GetWorkerThread(ThreadLifePolicy policy = ThreadLifePolicy.INFINITE)

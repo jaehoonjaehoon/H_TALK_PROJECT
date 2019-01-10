@@ -44,29 +44,29 @@ using System.IO;
 
 namespace EpLibrary.cs
 {
-    /// <summary>
+    
     /// Log Writer Singleton Instance
-    /// </summary>
+    
     public sealed class LogWriter:BaseTextFile
     {
-        /// <summary>
+        
         /// Name of the Log File
-        /// </summary>
+        
         private String m_fileName;
 
-        /// <summary>
+        
         /// Log string builder
-        /// </summary>
+        
         private StringBuilder m_logString;
 
-        /// <summary>
+        
         /// lock
-        /// </summary>
+        
         private Object m_logLock = new Object();
 
-        /// <summary>
+        
         /// Writer given message to the log with current time.
-        /// </summary>
+        
         /// <param name="pMsg">the message to print to the log file.</param>
         public void WriteLog(String pMsg)
         {
@@ -79,9 +79,9 @@ namespace EpLibrary.cs
             }
         }
 
-        /// <summary>
+        
         /// Default Constructor
-        /// </summary>
+        
         public LogWriter(string logFilename=null)
         {
             if (logFilename == null)
@@ -94,27 +94,27 @@ namespace EpLibrary.cs
             
         }
 		
-        /// <summary>
+        
         /// Default Copy Constructor
-        /// </summary>
+        
         /// <param name="b">the object to copy from</param>
         public LogWriter(LogWriter b)
         {
             m_fileName = b.m_fileName;
         }
 
-        /// <summary>
+        
         /// Loop Function that writes to the file.
-        /// </summary>
+        
         protected override void writeLoop()
         {
             writeToFile(m_logString.ToString());
         }
 
 
-        /// <summary>
+        
         /// Actual load Function that loads values from the file.
-        /// </summary>
+        
         /// <param name="stream">stream from the file</param>
         protected override void loadFromFile(StreamReader stream)
         {

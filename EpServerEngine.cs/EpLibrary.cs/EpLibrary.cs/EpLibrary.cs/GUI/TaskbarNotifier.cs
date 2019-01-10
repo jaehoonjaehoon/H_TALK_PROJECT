@@ -19,9 +19,9 @@ using System.Runtime.InteropServices;
 
 namespace EpLibrary.cs
 {
-	/// <summary>
+	
 	/// TaskbarNotifier allows to display MSN style/Skinned instant messaging popups
-	/// </summary>
+	
 	public class TaskbarNotifier : System.Windows.Forms.Form
 	{
         static void ShowNotifier(string title, string message, string imageFilename, Action<object, EventArgs> titleClick = null, Action<object, EventArgs> contentClick = null
@@ -110,9 +110,9 @@ namespace EpLibrary.cs
 		#endregion
 	
 		#region TaskbarNotifier Enums
-		/// <summary>
+		
 		/// List of the different popup animation status
-		/// </summary>
+		
 		public enum TaskbarStates
 		{
 			hidden = 0,
@@ -123,9 +123,9 @@ namespace EpLibrary.cs
 		#endregion
 
 		#region TaskbarNotifier Constructor
-		/// <summary>
+		
 		/// The Constructor for TaskbarNotifier
-		/// </summary>
+		
 		public TaskbarNotifier()
 		{
 			// Window Style
@@ -146,9 +146,9 @@ namespace EpLibrary.cs
 		#endregion
 
 		#region TaskbarNotifier Properties
-		/// <summary>
+		
 		/// Get the current TaskbarState (hidden, showing, visible, hiding)
-		/// </summary>
+		
 		public TaskbarStates TaskbarState
 		{
 			get
@@ -157,9 +157,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Get/Set the popup Title Text
-		/// </summary>
+		
 		public string TitleText
 		{
 			get
@@ -173,9 +173,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Get/Set the popup Content Text
-		/// </summary>
+		
 		public string ContentText
 		{
 			get
@@ -189,9 +189,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Get/Set the Normal Title Color
-		/// </summary>
+		
 		public Color NormalTitleColor
 		{
 			get
@@ -205,9 +205,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Get/Set the Hover Title Color
-		/// </summary>
+		
 		public Color HoverTitleColor
 		{
 			get
@@ -221,9 +221,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Get/Set the Normal Content Color
-		/// </summary>
+		
 		public Color NormalContentColor
 		{
 			get
@@ -237,9 +237,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Get/Set the Hover Content Color
-		/// </summary>
+		
 		public Color HoverContentColor
 		{
 			get
@@ -253,9 +253,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Get/Set the Normal Title Font
-		/// </summary>
+		
 		public Font NormalTitleFont
 		{
 			get
@@ -269,9 +269,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Get/Set the Hover Title Font
-		/// </summary>
+		
 		public Font HoverTitleFont
 		{
 			get
@@ -285,9 +285,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Get/Set the Normal Content Font
-		/// </summary>
+		
 		public Font NormalContentFont
 		{
 			get
@@ -301,9 +301,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Get/Set the Hover Content Font
-		/// </summary>
+		
 		public Font HoverContentFont
 		{
 			get
@@ -317,10 +317,10 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Indicates if the popup should remain visible when the mouse pointer is over it.
 		/// Added Rev 002
-		/// </summary>
+		
 		public bool KeepVisibleOnMousOver
 		{
 			get
@@ -333,10 +333,10 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Indicates if the popup should appear again when mouse moves over it while it's disappearing.
 		/// Added Rev 002
-		/// </summary>
+		
 		public bool ReShowOnMouseOver
 		{
 			get
@@ -354,9 +354,9 @@ namespace EpLibrary.cs
 		#region TaskbarNotifier Public Methods
 		[DllImport("user32.dll")]
 		private static extern Boolean ShowWindow(IntPtr hWnd,Int32 nCmdShow);
-		/// <summary>
+		
 		/// Displays the popup for a certain amount of time
-		/// </summary>
+		
 		/// <param name="strTitle">The string which will be shown as the title of the popup</param>
 		/// <param name="strContent">The string which will be shown as the content of the popup</param>
 		/// <param name="nTimeToShow">Duration of the showing animation (in milliseconds)</param>
@@ -431,9 +431,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Hides the popup
-		/// </summary>
+		
 		/// <returns>Nothing</returns>
 		public new void Hide()
 		{
@@ -445,9 +445,9 @@ namespace EpLibrary.cs
 			}
 		}
 
-		/// <summary>
+		
 		/// Sets the background bitmap and its transparency color
-		/// </summary>
+		
 		/// <param name="strFilename">Path of the Background Bitmap on the disk</param>
 		/// <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
 		/// <returns>Nothing</returns>
@@ -459,9 +459,9 @@ namespace EpLibrary.cs
 			Region = BitmapToRegion(BackgroundBitmap, transparencyColor);
 		}
 
-		/// <summary>
+		
 		/// Sets the background bitmap and its transparency color
-		/// </summary>
+		
 		/// <param name="image">Image/Bitmap object which represents the Background Bitmap</param>
 		/// <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
 		/// <returns>Nothing</returns>
@@ -473,9 +473,9 @@ namespace EpLibrary.cs
 			Region = BitmapToRegion(BackgroundBitmap, transparencyColor);
 		}
 
-		/// <summary>
+		
 		/// Sets the 3-State Close Button bitmap, its transparency color and its coordinates
-		/// </summary>
+		
 		/// <param name="strFilename">Path of the 3-state Close button Bitmap on the disk (width must a multiple of 3)</param>
 		/// <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
 		/// <param name="position">Location of the close button on the popup</param>
@@ -488,9 +488,9 @@ namespace EpLibrary.cs
 			CloseBitmapLocation = position;
 		}
 
-		/// <summary>
+		
 		/// Sets the 3-State Close Button bitmap, its transparency color and its coordinates
-		/// </summary>
+		
 		/// <param name="image">Image/Bitmap object which represents the 3-state Close button Bitmap (width must be a multiple of 3)</param>
 		/// <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
 		/// /// <param name="position">Location of the close button on the popup</param>
